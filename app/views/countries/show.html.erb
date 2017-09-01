@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Localizacao:</strong>
+  <%= @country.localizacao %>
+</p>
+
+<p>
+  <strong>Capital:</strong>
+  <%= @country.capital %>
+</p>
+
+<p>
+  <strong>Extensao:</strong>
+  <%= @country.extensao %>
+</p>
+
+<p>
+  <strong>Idioma:</strong>
+  <%= @country.idioma %>
+</p>
+
+<p>
+  <strong>Populacao:</strong>
+  <%= @country.populacao %>
+</p>
+
+<p>
+  <strong>Pib:</strong>
+  <%= @country.pib %>
+</p>
+
+<p>
+  <strong>Moeda:</strong>
+  <%= @country.moeda %>
+</p>
+
+<p>
+  <strong>Ano referencia:</strong>
+  <%= @country.ano_referencia %>
+</p>
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>

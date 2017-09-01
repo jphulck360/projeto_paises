@@ -1,0 +1,57 @@
+<%= form_with(model: country, local: true) do |form| %>
+  <% if country.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(country.errors.count, "error") %> prohibited this country from being saved:</h2>
+
+      <ul>
+      <% country.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :localizacao %>
+    <%= form.text_field :localizacao, id: :country_localizacao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :capital %>
+    <%= form.text_field :capital, id: :country_capital %>
+  </div>
+
+  <div class="field">
+    <%= form.label :extensao %>
+    <%= form.number_field :extensao, id: :country_extensao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idioma %>
+    <%= form.text_field :idioma, id: :country_idioma %>
+  </div>
+
+  <div class="field">
+    <%= form.label :populacao %>
+    <%= form.number_field :populacao, id: :country_populacao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pib %>
+    <%= form.text_field :pib, id: :country_pib %>
+  </div>
+
+  <div class="field">
+    <%= form.label :moeda %>
+    <%= form.text_field :moeda, id: :country_moeda %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ano_referencia %>
+    <%= form.number_field :ano_referencia, id: :country_ano_referencia %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

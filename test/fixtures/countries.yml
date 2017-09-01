@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  localizacao: MyString
+  capital: MyString
+  extensao: 1
+  idioma: MyString
+  populacao: 1
+  pib: 1.5
+  moeda: MyString
+  ano_referencia: 1
+
+two:
+  localizacao: MyString
+  capital: MyString
+  extensao: 1
+  idioma: MyString
+  populacao: 1
+  pib: 1.5
+  moeda: MyString
+  ano_referencia: 1
