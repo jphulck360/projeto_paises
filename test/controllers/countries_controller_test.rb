@@ -17,7 +17,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create country" do
     assert_difference('Country.count') do
-      post countries_url, params: { country: { ano_referencia: @country.ano_referencia, capital: @country.capital, extensao: @country.extensao, idioma: @country.idioma, localizacao: @country.localizacao, moeda: @country.moeda, pib: @country.pib, populacao: @country.populacao } }
+      post countries_url, params: { country: { ano_referencia: @country.ano_referencia, capital: @country.capital, extensao: @country.extensao, idioma: @country.idioma, local: @country.local, moeda: @country.moeda, pib: @country.pib, populacao: @country.populacao } }
     end
 
     assert_redirected_to country_url(Country.last)
@@ -34,7 +34,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update country" do
-    patch country_url(@country), params: { country: { ano_referencia: @country.ano_referencia, capital: @country.capital, extensao: @country.extensao, idioma: @country.idioma, localizacao: @country.localizacao, moeda: @country.moeda, pib: @country.pib, populacao: @country.populacao } }
+    patch country_url(@country), params: { country: { ano_referencia: @country.ano_referencia, capital: @country.capital, extensao: @country.extensao, idioma: @country.idioma, local: @country.local, moeda: @country.moeda, pib: @country.pib, populacao: @country.populacao } }
     assert_redirected_to country_url(@country)
   end
 

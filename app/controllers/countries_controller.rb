@@ -19,6 +19,7 @@ class CountriesController < ApplicationController
 
   # GET /countries/1/edit
   def edit
+    redirect_to root_path
   end
 
   # POST /countries
@@ -69,6 +70,6 @@ class CountriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def country_params
-      params.require(:country).permit(:localizacao, :capital, :extensao, :idioma, :populacao, :pib, :moeda, :ano_referencia)
+      params.require(:country).permit(:nome, :local, :capital, :extensao, :idioma, :populacao, :pib, :moeda, :ano_referencia, :imagem)
     end
 end

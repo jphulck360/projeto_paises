@@ -1,44 +1,56 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %>
 
-<p>
-  <strong>Localizacao:</strong>
-  <%= @country.localizacao %>
-</p>
+<table class="table" border="1" align="center">
+  <tr>
+    <th>ID:</th>
+    <td><%= @country.id %></td>
+  </tr>
 
-<p>
-  <strong>Capital:</strong>
-  <%= @country.capital %>
-</p>
+  <tr>
+    <th>Nome:</th>
+    <td><%= @country.nome %></td>
+  </tr>
 
-<p>
-  <strong>Extensao:</strong>
-  <%= @country.extensao %>
-</p>
+  <tr>
+    <th>Localização:</th>
+    <td><%= @country.local %></td>
+  </tr>
 
-<p>
-  <strong>Idioma:</strong>
-  <%= @country.idioma %>
-</p>
+  <tr>
+    <th>Capital:</th>
+    <td><%= @country.capital %></td>
+  </tr>
 
-<p>
-  <strong>Populacao:</strong>
-  <%= @country.populacao %>
-</p>
+  <tr>
+    <th>Extensao:</th>
+    <td><%= @country.extensao %></td>
+  </tr>
 
-<p>
-  <strong>Pib:</strong>
-  <%= @country.pib %>
-</p>
+  <tr>
+    <th>Idioma:</th>
+    <td><%= @country.idioma %></td>
+  </tr>
 
-<p>
-  <strong>Moeda:</strong>
-  <%= @country.moeda %>
-</p>
+  <tr>
+    <th>População:</th>
+    <td><%= @country.populacao %></td>
+  </tr>
 
-<p>
-  <strong>Ano referencia:</strong>
-  <%= @country.ano_referencia %>
-</p>
+  <tr>
+    <th>PIB:</th>
+    <td><%= @country.pib %></td>
+  </tr>
+
+  <tr>
+    <th>Moeda:</th>
+    <td><%= @country.moeda %></td>
+  </tr>
+
+  <tr>
+    <th>Ano referência:</th>
+    <td><%= @country.ano_referencia %></td>
+  </tr>
+</table>
 
 <%= link_to 'Edit', edit_country_path(@country) %> |
 <%= link_to 'Back', countries_path %>

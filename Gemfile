@@ -7,22 +7,23 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
-# Use sqlite3 as the database for Active Record
+#gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass', '~> 3.3.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
-gem "paperclip", "~> 5.0.0" # utilizado para enviar arquivos
+gem "paperclip" # utilizado para enviar arquivos
 gem 'bootstrap-generators', '~> 3.3.1'
-gem 'will_paginate'
+gem 'will_paginate' # cria paginação
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -43,7 +44,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver' # verificar gem
 end
 
 group :development do
@@ -51,7 +52,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring' # verificar gem
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 

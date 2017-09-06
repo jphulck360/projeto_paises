@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  localizacao: MyString
+  local: MyString
   capital: MyString
   extensao: 1
   idioma: MyString
@@ -11,7 +11,7 @@ one:
   ano_referencia: 1
 
 two:
-  localizacao: MyString
+  local: MyString
   capital: MyString
   extensao: 1
   idioma: MyString

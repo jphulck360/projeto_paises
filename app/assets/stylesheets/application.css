@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+#rodape
+{
+	background-color: #eee;
+	border: 1px solid black;
+	height: 60px;
+	width: 100%;
+	margin: 10px 0px 0px 0px;
+}
+
+#rodape p
+{
+	text-align: center;
+}
+/****************************************************************************************************/
+
+/************************ Referencia a tabela de 'index.html.erb - materials' ***********************/
+#tabela_central
+{
+	margin: auto;
+	width: 60%;
+}
+
+#tabela_show
+{
+	border: 1px solid;
+	margin: auto;
+	width: 50%;
+	overflow:scroll;
+}
+
+#texto /* Utilizado para quebra de texto em => 'app/views/orders/show.html.erb' */
+{
+	word-break: break-all;
+}
+
+#titulo
+{
+	text-align: center;
+	font-size: 30px;
+	font-family: "Arial", Times, serif;
+	width: 900px;
+    margin: auto;
+    /* border: 1px solid black; */
+    padding: 30px 0px 30px 0px;
+}
+/****************************************************************************************************/

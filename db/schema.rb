@@ -10,22 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901202512) do
+ActiveRecord::Schema.define(version: 20170906165556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "countries", force: :cascade do |t|
-    t.string "localizacao"
-    t.string "capital"
-    t.integer "extensao"
-    t.string "idioma"
-    t.integer "populacao"
-    t.float "pib"
-    t.string "moeda"
-    t.integer "ano_referencia"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "nome"
+    t.string   "local"
+    t.string   "capital"
+    t.integer  "extensao"
+    t.string   "idioma"
+    t.integer  "populacao"
+    t.float    "pib"
+    t.string   "moeda"
+    t.integer  "ano_referencia"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "imagem_file_name"
+    t.string   "imagem_content_type"
+    t.integer  "imagem_file_size"
+    t.datetime "imagem_updated_at"
   end
 
 end

@@ -23,8 +23,9 @@ Things you may want to cover:
 
 * ...
 
-================================
 
-Tabela -> Country
+=================================================
 
-rails g scaffold country localizacao:string capital:string extensao:integer idioma:string populacao:integer pib:float moeda:string ano_referencia:integer
+Aplicação baseada no app => 'JP Geo'
+
+link -> http://galeria.fabricadeaplicativos.com.br/jpgeo

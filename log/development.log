@@ -1,39 +1,927 @@
-  [1m[35m (74.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4027339421063124810)[0m
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateCountries (20170901202512)
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "countries" ("id" bigserial primary key, "localizacao" character varying, "capital" character varying, "extensao" integer, "idioma" character varying, "populacao" integer, "pib" float, "moeda" character varying, "ano_referencia" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170901202512"]]
-  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (135.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "paises_db"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "paises_db"[0m
+  [1m[35m (24.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4027339421063124810);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35mSQL (9.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-01 20:25:24.582275"], ["updated_at", "2017-09-01 20:25:24.582275"]]
-  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-06 16:45:40.763981"], ["updated_at", "2017-09-06 16:45:40.763981"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4027339421063124810)[0m
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started GET "/" for 127.0.0.1 at 2017-09-01 17:34:22 -0300
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: cleanup! is deprecated and will be removed from Rails 5.1 (use Rails.application.reloader.reload! instead of cleanup + prepare) (called from serve at /usr/lib/ruby/vendor_ruby/spring/application.rb:152)
+DEPRECATION WARNING: prepare! is deprecated and will be removed from Rails 5.1 (use Rails.application.reloader.prepare! instead) (called from serve at /usr/lib/ruby/vendor_ruby/spring/application.rb:153)
+DEPRECATION WARNING: cleanup! is deprecated and will be removed from Rails 5.1 (use Rails.application.reloader.reload! instead of cleanup + prepare) (called from serve at /usr/lib/ruby/vendor_ruby/spring/application.rb:152)
+DEPRECATION WARNING: prepare! is deprecated and will be removed from Rails 5.1 (use Rails.application.reloader.prepare! instead) (called from serve at /usr/lib/ruby/vendor_ruby/spring/application.rb:153)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4027339421063124810);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCountries (20170906165040)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "countries" ("id" serial primary key, "local" character varying, "capital" character varying, "extensao" integer, "idioma" character varying, "populacao" integer, "pib" float, "moeda" character varying, "ano_referencia" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170906165040"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4027339421063124810)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-09-06 13:52:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by Rails::WelcomeController#index as HTML
-  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (14.7ms)
-Completed 200 OK in 77ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+  Parameters: {"internal"=>true}
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.0.5/lib/rails/templates/rails/welcome/index.html.erb (10.7ms)
+Completed 200 OK in 65ms (Views: 33.9ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/" for 127.0.0.1 at 2017-09-01 17:35:10 -0300
+Started GET "/" for 127.0.0.1 at 2017-09-06 13:53:00 -0300
 Processing by CountriesController#index as HTML
   Rendering countries/index.html.erb within layouts/application
-  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
-  Rendered countries/index.html.erb within layouts/application (10.7ms)
-Completed 200 OK in 1643ms (Views: 1634.1ms | ActiveRecord: 3.1ms)
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (34.1ms)
+Completed 500 Internal Server Error in 523ms (ActiveRecord: 2.5ms)
 
 
-Started GET "/countries/new" for 127.0.0.1 at 2017-09-01 17:35:30 -0300
+  
+ActionView::Template::Error (couldn't find file 'rails-ujs' with type 'application/javascript'
+Checked in these paths: 
+  /home/joao/Documentos/RAILS/EXEMPLOS_APPS/PROJETO_PAISES/app/assets/config
+  /home/joao/Documentos/RAILS/EXEMPLOS_APPS/PROJETO_PAISES/app/assets/images
+  /home/joao/Documentos/RAILS/EXEMPLOS_APPS/PROJETO_PAISES/app/assets/javascripts
+  /home/joao/Documentos/RAILS/EXEMPLOS_APPS/PROJETO_PAISES/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /var/lib/gems/2.3.0/gems/bootstrap-generators-3.3.4/vendor/assets/fonts
+  /var/lib/gems/2.3.0/gems/bootstrap-generators-3.3.4/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/bootstrap-generators-3.3.4/vendor/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/actioncable-5.0.5/lib/assets/compiled
+  /var/lib/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/joao/Documentos/RAILS/EXEMPLOS_APPS/PROJETO_PAISES/node_modules
+  /var/lib/gems/2.3.0/gems/bootstrap-generators-3.3.4/vendor/twitter/bootstrap/sass
+  /home/joao/Documentos/RAILS/EXEMPLOS_APPS/PROJETO_PAISES/app/assets/fonts):
+    4:     <title>PROJETOPaises</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:13
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3963878096213276941_70223621889760'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.5ms)
+Started GET "/" for 127.0.0.1 at 2017-09-06 13:53:30 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 1369ms (Views: 1366.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-09-06 13:53:33 -0300
 Processing by CountriesController#new as HTML
   Rendering countries/new.html.erb within layouts/application
-  Rendered countries/_form.html.erb (194.3ms)
-  Rendered countries/new.html.erb within layouts/application (196.6ms)
-Completed 200 OK in 324ms (Views: 262.6ms | ActiveRecord: 5.6ms)
+  Rendered countries/_form.html.erb (255.9ms)
+  Rendered countries/new.html.erb within layouts/application (261.5ms)
+Completed 200 OK in 455ms (Views: 331.4ms | ActiveRecord: 32.1ms)
+
+
+DEPRECATION WARNING: cleanup! is deprecated and will be removed from Rails 5.1 (use Rails.application.reloader.reload! instead of cleanup + prepare) (called from serve at /usr/lib/ruby/vendor_ruby/spring/application.rb:152)
+DEPRECATION WARNING: prepare! is deprecated and will be removed from Rails 5.1 (use Rails.application.reloader.prepare! instead) (called from serve at /usr/lib/ruby/vendor_ruby/spring/application.rb:153)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4027339421063124810);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentImagemToCountries (20170906165556)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddAttachmentImagemToCountries < ActiveRecord::Migration[4.2] (called from require at /home/joao/Documentos/RAILS/EXEMPLOS_APPS/PROJETO_PAISES/bin/rails:9)
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_file_name" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_content_type" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_file_size" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_updated_at" timestamp[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170906165556"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4027339421063124810)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:01:52 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 43ms (Views: 31.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:03:59 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (6.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 107ms (Views: 99.3ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:05:10 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (5.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 103ms (Views: 96.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:05:22 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (4.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 86ms (Views: 76.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-09-06 14:05:26 -0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (49.2ms)
+  Rendered countries/new.html.erb within layouts/application (51.3ms)
+Completed 200 OK in 174ms (Views: 120.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-09-06 14:05:42 -0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (28.8ms)
+  Rendered countries/new.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 103ms (Views: 97.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:05:45 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (5.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 69ms (Views: 61.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-09-06 14:05:47 -0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (21.1ms)
+  Rendered countries/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 84ms (Views: 82.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/countries" for 127.0.0.1 at 2017-09-06 14:05:52 -0300
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DWHvUidxSlaljxjyYLAnK5GJO+3qHT6Nz+r0thtgxiFO+sJepaqdPXOMKlUoe3BtyF9infDLM2ncMl3ypmJXUw==", "country"=>{"local"=>"Europa", "capital"=>"", "extensao"=>"", "idioma"=>"", "populacao"=>"", "pib"=>"", "moeda"=>"", "ano_referencia"=>""}, "commit"=>"Create Country"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.7ms)[0m  [1m[32mINSERT INTO "countries" ("local", "capital", "idioma", "moeda", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["local", "Europa"], ["capital", ""], ["idioma", ""], ["moeda", ""], ["created_at", "2017-09-06 17:05:52.673011"], ["updated_at", "2017-09-06 17:05:52.673011"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/countries/1
+Completed 302 Found in 25ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 14:05:52 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 67ms (Views: 39.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:05:54 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 14:05:55 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 49ms (Views: 42.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:05:59 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (1.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 51ms (Views: 47.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries/1/edit" for 127.0.0.1 at 2017-09-06 14:06:26 -0300
+Processing by CountriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/edit.html.erb within layouts/application
+  Rendered countries/_form.html.erb (11.3ms)
+  Rendered countries/edit.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/countries/1" for 127.0.0.1 at 2017-09-06 14:06:29 -0300
+Processing by CountriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G5l1TZQ00kMmM5T2O2i2T3jTuU9o6aDj1HgcV3R7xjpYAlhBFu8FKPAwplFzo+EJIQXgP3I/rQfHoLUTyXlXSA==", "country"=>{"local"=>"Europax", "capital"=>"", "extensao"=>"", "idioma"=>"", "populacao"=>"", "pib"=>"", "moeda"=>"", "ano_referencia"=>""}, "commit"=>"Update Country", "id"=>"1"}
+  [1m[36mCountry Load (1.9ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "countries" SET "local" = $1, "updated_at" = $2 WHERE "countries"."id" = $3[0m  [["local", "Europax"], ["updated_at", "2017-09-06 17:06:29.029682"], ["id", 1]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/countries/1
+Completed 302 Found in 23ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 14:06:29 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 43ms (Views: 35.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:06:30 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 14:06:32 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 52ms (Views: 46.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:06:37 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (6.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 49ms (Views: 39.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 14:09:07 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 56ms (Views: 50.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 14:09:09 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (1.9ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 50ms (Views: 45.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 14:09:10 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (2.0ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:09:11 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries/1/edit" for 127.0.0.1 at 2017-09-06 14:09:31 -0300
+Processing by CountriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/edit.html.erb within layouts/application
+  Rendered countries/_form.html.erb (7.0ms)
+  Rendered countries/edit.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 52ms (Views: 47.9ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/countries/1" for 127.0.0.1 at 2017-09-06 14:09:36 -0300
+Processing by CountriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SOLJo6KCGxpR7pZimJ46L/aDlEDG2PaNbMFQqHCe01gLeeSvIFnMcYftpMXQVW1pr1XNMNwO+2l/GfnszZxCKg==", "country"=>{"local"=>"Europax", "capital"=>"", "extensao"=>"5", "idioma"=>"", "populacao"=>"", "pib"=>"", "moeda"=>"", "ano_referencia"=>""}, "commit"=>"Update Country", "id"=>"1"}
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "countries" SET "extensao" = $1, "updated_at" = $2 WHERE "countries"."id" = $3[0m  [["extensao", 5], ["updated_at", "2017-09-06 17:09:37.002741"], ["id", 1]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/countries/1
+Completed 302 Found in 21ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 14:09:37 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 48ms (Views: 41.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:09:38 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 14:09:41 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (4.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 63ms (Views: 55.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:09:42 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 49ms (Views: 47.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-09-06 14:09:58 -0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (11.8ms)
+  Rendered countries/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 48ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-09-06 14:10:37 -0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (24.5ms)
+  Rendered countries/new.html.erb within layouts/application (50.2ms)
+Completed 200 OK in 145ms (Views: 137.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-09-06 14:23:00 -0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (37.2ms)
+  Rendered countries/new.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 78ms (Views: 74.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-09-06 14:23:51 -0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (8.5ms)
+  Rendered countries/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:24:20 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 73ms (Views: 69.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:24:37 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 62ms (Views: 58.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 14:24:39 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (3.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 71ms (Views: 63.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:31:50 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 47ms (Views: 45.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-09-06 14:32:01 -0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (23.9ms)
+  Rendered countries/new.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 91ms (Views: 89.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/countries" for 127.0.0.1 at 2017-09-06 14:32:12 -0300
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFd3ngSTHrPuUazv1rI3DaS/w5qZrv8Dd1EWoh8BhaAfzFqShkjJ2DhSnkieeWBL/Wma6oN48udkib/mogMU0g==", "country"=>{"imagem"=>#<ActionDispatch::Http::UploadedFile:0x00000005a40038 @tempfile=#<Tempfile:/tmp/RackMultipart20170906-7682-1y7byvf.jpg>, @original_filename="comp_risco_alcool.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"country[imagem]\"; filename=\"comp_risco_alcool.jpg\"\r\nContent-Type: image/jpeg\r\n">, "local"=>"", "capital"=>"", "extensao"=>"", "idioma"=>"", "populacao"=>"", "pib"=>"", "moeda"=>"", "ano_referencia"=>""}, "commit"=>"Create Country"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  
+app/controllers/countries_controller.rb:27:in `create'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.9ms)
+Started POST "/countries" for 127.0.0.1 at 2017-09-06 14:33:20 -0300
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFd3ngSTHrPuUazv1rI3DaS/w5qZrv8Dd1EWoh8BhaAfzFqShkjJ2DhSnkieeWBL/Wma6oN48udkib/mogMU0g==", "country"=>{"imagem"=>#<ActionDispatch::Http::UploadedFile:0x007fbc6e2a7240 @tempfile=#<Tempfile:/tmp/RackMultipart20170906-7682-1jrbxyd.jpg>, @original_filename="comp_risco_alcool.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"country[imagem]\"; filename=\"comp_risco_alcool.jpg\"\r\nContent-Type: image/jpeg\r\n">, "local"=>"", "capital"=>"", "extensao"=>"", "idioma"=>"", "populacao"=>"", "pib"=>"", "moeda"=>"", "ano_referencia"=>""}, "commit"=>"Create Country"}
+Command :: file -b --mime '/tmp/003ee9194af6878b0a475278ba2640e920170906-7682-jw7wn9.jpg'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/003ee9194af6878b0a475278ba2640e920170906-7682-1q6ycf9.jpg'
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("local", "capital", "idioma", "moeda", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["local", ""], ["capital", ""], ["idioma", ""], ["moeda", ""], ["created_at", "2017-09-06 17:33:20.649476"], ["updated_at", "2017-09-06 17:33:20.649476"], ["imagem_file_name", "comp_risco_alcool.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 686748], ["imagem_updated_at", "2017-09-06 17:33:20.500625"]]
+  [1m[35m (34.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/countries/2
+Completed 302 Found in 249ms (ActiveRecord: 38.3ms)
+
+
+Started GET "/countries/2" for 127.0.0.1 at 2017-09-06 14:33:20 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50ms (Views: 45.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:33:22 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-09-06 14:33:25 -0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (14.5ms)
+  Rendered countries/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 81ms (Views: 79.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/countries" for 127.0.0.1 at 2017-09-06 14:33:28 -0300
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"22xEd7We6D6iL791tzEFxDWDLi/WtIFwb76gXhCA+lGY92l7N0U/VXQsjdL/+lKCbFV3X8xijJR8ZgkarYJrIw==", "country"=>{"imagem"=>#<ActionDispatch::Http::UploadedFile:0x007fbc611fa2a0 @tempfile=#<Tempfile:/tmp/RackMultipart20170906-7682-f0s05b.jpg>, @original_filename="folder_motociclista.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"country[imagem]\"; filename=\"folder_motociclista.jpg\"\r\nContent-Type: image/jpeg\r\n">, "local"=>"", "capital"=>"", "extensao"=>"", "idioma"=>"", "populacao"=>"", "pib"=>"", "moeda"=>"", "ano_referencia"=>""}, "commit"=>"Create Country"}
+Command :: file -b --mime '/tmp/d1dbb60f9f735566215a37c35467b98420170906-7682-jxbx4w.jpg'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/d1dbb60f9f735566215a37c35467b98420170906-7682-kicwk7.jpg'
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "countries" ("local", "capital", "idioma", "moeda", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["local", ""], ["capital", ""], ["idioma", ""], ["moeda", ""], ["created_at", "2017-09-06 17:33:28.946329"], ["updated_at", "2017-09-06 17:33:28.946329"], ["imagem_file_name", "folder_motociclista.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 570808], ["imagem_updated_at", "2017-09-06 17:33:28.910790"]]
+  [1m[35m (62.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/countries/3
+Completed 302 Found in 125ms (ActiveRecord: 64.2ms)
+
+
+Started GET "/countries/3" for 127.0.0.1 at 2017-09-06 14:33:29 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 74ms (Views: 68.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:33:30 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4027339421063124810);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4027339421063124810)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5018.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "paises_db"[0m
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:35:15 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 52ms (Views: 39.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 14:37:13 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (1.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 46ms (Views: 40.8ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (135.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "paises_db"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "paises_db"[0m
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4027339421063124810);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCountries (20170906165040)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "countries" ("id" serial primary key, "nome" character varying, "local" character varying, "capital" character varying, "extensao" integer, "idioma" character varying, "populacao" integer, "pib" float, "moeda" character varying, "ano_referencia" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170906165040"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentImagemToCountries (20170906165556)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddAttachmentImagemToCountries < ActiveRecord::Migration[4.2] (called from require at /home/joao/Documentos/RAILS/EXEMPLOS_APPS/PROJETO_PAISES/bin/rails:9)
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_file_name" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_content_type" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_file_size" integer[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_updated_at" timestamp[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170906165556"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-06 17:39:53.109955"], ["updated_at", "2017-09-06 17:39:53.109955"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4027339421063124810)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:41:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 558ms (Views: 529.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:41:38 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (1.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 89ms (Views: 86.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:41:50 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 84ms (Views: 66.6ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170906-9725-4nby7w.gif'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170906-9725-1i7qbhe.gif'
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("id", "nome", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 1], ["nome", "Afeganistão"], ["created_at", "2017-09-06 17:47:32.792113"], ["updated_at", "2017-09-06 17:47:32.792113"], ["imagem_file_name", "Afeganistão.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7411], ["imagem_updated_at", "2017-09-06 17:47:32.749242"]]
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:47:35 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 142ms (Views: 132.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:48:42 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (5.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 85ms (Views: 74.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:48:53 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (1.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:49:02 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (3.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 82ms (Views: 74.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:49:10 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 86ms (Views: 81.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:49:18 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (8.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 110ms (Views: 96.2ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:50:40 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 94ms (Views: 90.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:50:48 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 48ms (Views: 42.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:51:16 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 78ms (Views: 74.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 14:51:25 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 72ms (Views: 70.3ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (5.7ms)[0m  [1m[31mDELETE FROM "countries"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "countries"[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170906-10136-19nxucd.gif'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170906-10136-yu9f4z.gif'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("id", "nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["id", 1], ["nome", "Afeganistão"], ["local", "Ásia"], ["capital", "Kabul"], ["extensao", 652230], ["idioma", "Patcho e Dari"], ["populacao", 33397058], ["pib", 18949000.0], ["moeda", "Afegane"], ["ano_referencia", 2012], ["created_at", "2017-09-06 18:01:45.021243"], ["updated_at", "2017-09-06 18:01:45.021243"], ["imagem_file_name", "Afeganistão.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7411], ["imagem_updated_at", "2017-09-06 18:01:45.005206"]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-09-06 15:01:49 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (1.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 62ms (Views: 59.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-09-06 15:01:52 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 53ms (Views: 26.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 15:01:56 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (3.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 53ms (Views: 44.6ms | ActiveRecord: 3.6ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[31mDELETE FROM "countries"[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170906-10471-dq4fm3.gif'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170906-10471-1f0k65v.gif'
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Afeganistão"], ["local", "Ásia"], ["capital", "Kabul"], ["extensao", 652230], ["idioma", "Patcho e Dari"], ["populacao", 33397058], ["pib", 18949000.0], ["moeda", "Afegane"], ["ano_referencia", 2012], ["created_at", "2017-09-06 18:17:27.789133"], ["updated_at", "2017-09-06 18:17:27.789133"], ["imagem_file_name", "Afeganistão.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7411], ["imagem_updated_at", "2017-09-06 18:17:27.763617"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "countries"[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170906-10541-17q38tn.gif'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170906-10541-3rvm9h.gif'
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Afeganistão"], ["local", "Ásia"], ["capital", "Kabul"], ["extensao", 652230], ["idioma", "Patcho e Dari"], ["populacao", 33397058], ["pib", 18949000.0], ["moeda", "Afegane"], ["ano_referencia", 2012], ["created_at", "2017-09-06 18:20:03.175800"], ["updated_at", "2017-09-06 18:20:03.175800"], ["imagem_file_name", "Afeganistão.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7411], ["imagem_updated_at", "2017-09-06 18:20:03.151873"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/4a3c8515c9fd898a8183dc92753d21e720170906-10541-1k37ney.gif'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4a3c8515c9fd898a8183dc92753d21e720170906-10541-4zzj20.gif'
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Albânia"], ["local", "Europa"], ["capital", "Tirana"], ["extensao", 28750], ["idioma", "Albanês"], ["populacao", 3227373], ["pib", 13000000.0], ["moeda", "Lek"], ["ano_referencia", 2012], ["created_at", "2017-09-06 18:20:03.214966"], ["updated_at", "2017-09-06 18:20:03.214966"], ["imagem_file_name", "Albânia.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 14863], ["imagem_updated_at", "2017-09-06 18:20:03.199240"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 15:20:07 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 58ms (Views: 51.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/countries/3" for 127.0.0.1 at 2017-09-06 15:20:11 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 45ms (Views: 36.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 15:20:13 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 52ms (Views: 46.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 15:20:46 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 55ms (Views: 51.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 15:21:43 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 85ms (Views: 80.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/countries/3" for 127.0.0.1 at 2017-09-06 15:21:46 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 79ms (Views: 65.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 15:30:39 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 48ms (Views: 45.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 15:31:27 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries/3" for 127.0.0.1 at 2017-09-06 15:31:31 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 62ms (Views: 57.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/countries/2" for 127.0.0.1 at 2017-09-06 15:31:36 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 80ms (Views: 67.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/countries/edit" for 127.0.0.1 at 2017-09-06 15:34:37 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Country with 'id'=edit):
+  
+app/controllers/countries_controller.rb:67:in `set_country'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.3ms)
+Started GET "/countries/1/edit" for 127.0.0.1 at 2017-09-06 15:34:44 -0300
+Processing by CountriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 8ms (ActiveRecord: 4.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Country with 'id'=1):
+  
+app/controllers/countries_controller.rb:67:in `set_country'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.0ms)
+Started GET "/countries" for 127.0.0.1 at 2017-09-06 15:35:37 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 64ms (Views: 54.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries/2" for 127.0.0.1 at 2017-09-06 15:35:56 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCountry Load (4.6ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 80ms (Views: 65.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-06 16:43:41 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (1.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 2744ms (Views: 2703.5ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/countries/2" for 127.0.0.1 at 2017-09-06 16:43:46 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 70ms (Views: 57.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/countries/3" for 127.0.0.1 at 2017-09-06 16:43:49 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 90ms (Views: 77.2ms | ActiveRecord: 0.5ms)
 
 

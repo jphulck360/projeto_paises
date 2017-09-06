@@ -1,4 +1,4 @@
-<%= form_with(model: country, local: true) do |form| %>
+<%= form_for(country,:html => { :multipart => true }) do |f| %>
   <% if country.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(country.errors.count, "error") %> prohibited this country from being saved:</h2>
@@ -11,47 +11,95 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :localizacao %>
-    <%= form.text_field :localizacao, id: :country_localizacao %>
-  </div>
 
-  <div class="field">
-    <%= form.label :capital %>
-    <%= form.text_field :capital, id: :country_capital %>
-  </div>
+  <table align="center">
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label 'Imagem' %>
+          <%= f.file_field :imagem %>
+        </div>
+      </td>
+    </tr>
 
-  <div class="field">
-    <%= form.label :extensao %>
-    <%= form.number_field :extensao, id: :country_extensao %>
-  </div>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :local %>
+          <%= f.text_field :local %>
+        </div>
+      </td>
+    </tr>
 
-  <div class="field">
-    <%= form.label :idioma %>
-    <%= form.text_field :idioma, id: :country_idioma %>
-  </div>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :capital %>
+          <%= f.text_field :capital %>
+        </div>
+      </td>
+    </tr>
 
-  <div class="field">
-    <%= form.label :populacao %>
-    <%= form.number_field :populacao, id: :country_populacao %>
-  </div>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :extensao %>
+          <%= f.number_field :extensao %>
+        </div>
+      </td>
+    </tr>
 
-  <div class="field">
-    <%= form.label :pib %>
-    <%= form.text_field :pib, id: :country_pib %>
-  </div>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :idioma %>
+          <%= f.text_field :idioma %>
+        </div>
+      </td>
+    </tr>
 
-  <div class="field">
-    <%= form.label :moeda %>
-    <%= form.text_field :moeda, id: :country_moeda %>
-  </div>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :populacao %>
+          <%= f.number_field :populacao %>
+        </div>
+      </td>
+    </tr>
 
-  <div class="field">
-    <%= form.label :ano_referencia %>
-    <%= form.number_field :ano_referencia, id: :country_ano_referencia %>
-  </div>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :pib %>
+          <%= f.text_field :pib %>
+        </div>
+      </td>
+    </tr>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :moeda %>
+          <%= f.text_field :moeda %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :ano_referencia %>
+          <%= f.number_field :ano_referencia %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </td>
+    </tr>
+  </table>    
 <% end %>
