@@ -1,5 +1,5 @@
 class CountriesController < ApplicationController
-  before_action :set_country, only: [:show, :edit, :update, :destroy]
+  before_action :set_country, only: [:show, :edit, :update, :destroy, :sobre]
 
   # GET /countries
   # GET /countries.json
@@ -60,6 +60,9 @@ class CountriesController < ApplicationController
       format.html { redirect_to countries_url, notice: 'Country was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def sobre
   end
 
   private

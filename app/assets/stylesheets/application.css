@@ -14,6 +14,11 @@
  *= require_self
  */
 
+body{
+	background-color: #eee;
+}
+
+
 #rodape
 {
 	background-color: #eee;
@@ -27,9 +32,13 @@
 {
 	text-align: center;
 }
-/****************************************************************************************************/
 
-/************************ Referencia a tabela de 'index.html.erb - materials' ***********************/
+#container
+{
+	margin: auto;
+	width: 60%;
+}
+
 #tabela_central
 {
 	margin: auto;

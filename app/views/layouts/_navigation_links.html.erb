@@ -1,0 +1,12 @@
+<%# add navigation links to this file %>
+
+<!-- Caso estiver logado o menu aparece assim: -->
+
+<!-- Atualmente ainda não foi instalada a 'gem devise'. O código abaixo fiará desabilitado por enquanto. -->
+
+<%# if user_signed_in? %>
+	<!-- <li><%# link_to 'Países', users_path('countries') %></li> -->
+<%# else %>
+<%# end %>
+
+<li><%= link_to 'Países', countries_sobre_path() %></li>
