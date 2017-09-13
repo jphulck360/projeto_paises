@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %>
 
-<table class="table" border="1" align="center">
+<div id="titulo" class="animated pulse">
+  Dados sobre <%= @country.nome %>
+</div>
+
+<center>
+  <%= image_tag @country.imagem.url, size:"250x200" %>
+</center>
+
+<hr>
+
+<table class="table" align="center">
   <tr>
     <th>ID:</th>
     <td><%= @country.id %></td>
@@ -23,7 +33,7 @@
 
   <tr>
     <th>Extensao:</th>
-    <td><%= @country.extensao %></td>
+    <td><%= @country.extensao %> km²</td>
   </tr>
 
   <tr>
@@ -33,12 +43,12 @@
 
   <tr>
     <th>População:</th>
-    <td><%= @country.populacao %></td>
+    <td><%= number_with_delimiter(@country.populacao, precision: 3, delimiter: ".") %> hab</td>
   </tr>
 
   <tr>
     <th>PIB:</th>
-    <td><%= @country.pib %></td>
+    <td><%= number_to_currency(@country.pib, precision: 3, unit: "US$ ") %></td> <!-- number_to_currency(1234567890.506, precision: 3) -->
   </tr>
 
   <tr>
@@ -52,5 +62,5 @@
   </tr>
 </table>
 
-<%= link_to 'Edit', edit_country_path(@country) %> |
-<%= link_to 'Back', countries_path %>
+<%# link_to 'Edit', edit_country_path(@country) %>
+<%# link_to 'Back', countries_path %>

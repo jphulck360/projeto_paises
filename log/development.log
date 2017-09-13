@@ -1579,3 +1579,969 @@ app/controllers/countries_controller.rb:71:in `set_country'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
   Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (45.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (82.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (5.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (396.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "paises_db"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "paises_db"[0m
+  [1m[35m (108.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (114.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4027339421063124810);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (7.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCountries (20170906165040)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (95.5ms)[0m  [1m[35mCREATE TABLE "countries" ("id" serial primary key, "nome" character varying, "local" character varying, "capital" character varying, "extensao" integer, "idioma" character varying, "populacao" integer, "pib" float, "moeda" character varying, "ano_referencia" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (19.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170906165040"]]
+  [1m[35m (19.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentImagemToCountries (20170906165556)
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddAttachmentImagemToCountries < ActiveRecord::Migration[4.2] (called from require at /home/mariza/Documentos/RAILS/projeto_paises/bin/rails:9)
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_file_name" character varying[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_content_type" character varying[0m
+  [1m[35m (7.2ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_file_size" integer[0m
+  [1m[35m (6.1ms)[0m  [1m[35mALTER TABLE "countries" ADD "imagem_updated_at" timestamp[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170906165556"]]
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-13 02:47:49.952795"], ["updated_at", "2017-09-13 02:47:49.952795"]]
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(4027339421063124810)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (9.5ms)[0m  [1m[31mDELETE FROM "countries"[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170912-3294-1bxntjo.gif'
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170912-3294-12gadq3.gif'
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Afeganistão"], ["local", "Ásia"], ["capital", "Kabul"], ["extensao", 652230], ["idioma", "Patcho,Dari"], ["populacao", 33397058], ["pib", 19470000000.0], ["moeda", "Afegane"], ["ano_referencia", 2016], ["created_at", "2017-09-13 02:48:11.201241"], ["updated_at", "2017-09-13 02:48:11.201241"], ["imagem_file_name", "Afeganistão.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7411], ["imagem_updated_at", "2017-09-13 02:48:10.885321"]]
+  [1m[35m (18.5ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/4a3c8515c9fd898a8183dc92753d21e720170912-3294-1s6tomg.gif'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4a3c8515c9fd898a8183dc92753d21e720170912-3294-1xjwsr5.gif'
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Albânia"], ["local", "Europa"], ["capital", "Tirana"], ["extensao", 28750], ["idioma", "Albanês"], ["populacao", 3227373], ["pib", 13000000.0], ["moeda", "Lek"], ["ano_referencia", 2016], ["created_at", "2017-09-13 02:48:11.501381"], ["updated_at", "2017-09-13 02:48:11.501381"], ["imagem_file_name", "Albânia.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 14863], ["imagem_updated_at", "2017-09-13 02:48:11.340932"]]
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/de864f78bc7bc859ab0b26086695af6920170912-3294-fkewax.gif'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/de864f78bc7bc859ab0b26086695af6920170912-3294-1h5firh.gif'
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Alemanha"], ["local", "Europa"], ["capital", "Berlim"], ["extensao", 357120], ["idioma", "Alemão"], ["populacao", 83100000], ["pib", 3466760000000.0], ["moeda", "Euro"], ["ano_referencia", 2016], ["created_at", "2017-09-13 02:48:11.644676"], ["updated_at", "2017-09-13 02:48:11.644676"], ["imagem_file_name", "Alemanha.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7610], ["imagem_updated_at", "2017-09-13 02:48:11.534098"]]
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (8.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (20.7ms)[0m  [1m[31mDELETE FROM "countries"[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170913-3648-1nvrlqm.gif'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170913-3648-13k8dhz.gif'
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Afeganistão"], ["local", "Ásia"], ["capital", "Kabul"], ["extensao", 652230], ["idioma", "Patcho,Dari"], ["populacao", 33397058], ["pib", 19470000000.0], ["moeda", "Afegane"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:26:00.326590"], ["updated_at", "2017-09-13 03:26:00.326590"], ["imagem_file_name", "Afeganistão.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7411], ["imagem_updated_at", "2017-09-13 03:26:00.143547"]]
+  [1m[35m (21.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (7.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (28.2ms)[0m  [1m[31mDELETE FROM "countries"[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170913-3681-1vky6s7.gif'
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170913-3681-d87hxy.gif'
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Afeganistão"], ["local", "Ásia"], ["capital", "Kabul"], ["extensao", 652230], ["idioma", "Patcho,Dari"], ["populacao", 33397058], ["pib", 19470000000.0], ["moeda", "Afegane"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:05.807280"], ["updated_at", "2017-09-13 03:27:05.807280"], ["imagem_file_name", "Afeganistão.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7411], ["imagem_updated_at", "2017-09-13 03:27:05.682281"]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/4bbec8432f7f1b19945f5cbed87d6a0020170913-3681-cs2d8l.jpg'
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4bbec8432f7f1b19945f5cbed87d6a0020170913-3681-1qt7hsc.jpg'
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "África do Sul"], ["local", "África"], ["capital", "Pretoria"], ["extensao", 1219090], ["idioma", "Aficaner e Inglês"], ["populacao", 50738255], ["pib", 294840000000.0], ["moeda", "Rand"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:05.962840"], ["updated_at", "2017-09-13 03:27:05.962840"], ["imagem_file_name", "Africa_do_Sul.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 36453], ["imagem_updated_at", "2017-09-13 03:27:05.929080"]]
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/4a3c8515c9fd898a8183dc92753d21e720170913-3681-1kb907e.gif'
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4a3c8515c9fd898a8183dc92753d21e720170913-3681-lrhrvx.gif'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Albânia"], ["local", "Europa"], ["capital", "Tirana"], ["extensao", 28750], ["idioma", "Albanês"], ["populacao", 3227373], ["pib", 13000000.0], ["moeda", "Lek"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:06.170299"], ["updated_at", "2017-09-13 03:27:06.170299"], ["imagem_file_name", "Albânia.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 14863], ["imagem_updated_at", "2017-09-13 03:27:06.024024"]]
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/de864f78bc7bc859ab0b26086695af6920170913-3681-oh2jrf.gif'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/de864f78bc7bc859ab0b26086695af6920170913-3681-ozgkfj.gif'
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Alemanha"], ["local", "Europa"], ["capital", "Berlim"], ["extensao", 357120], ["idioma", "Alemão"], ["populacao", 83100000], ["pib", 3466760000000.0], ["moeda", "Euro"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:06.372518"], ["updated_at", "2017-09-13 03:27:06.372518"], ["imagem_file_name", "Alemanha.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7610], ["imagem_updated_at", "2017-09-13 03:27:06.272177"]]
+  [1m[35m (16.1ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/68746a7280b143cfc01f967610d3e86d20170913-3681-2ei035.jpg'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/68746a7280b143cfc01f967610d3e86d20170913-3681-qhi6ri.jpg'
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Andorra"], ["local", "Europa"], ["capital", "Andorra"], ["extensao", 470], ["idioma", "Catalão"], ["populacao", 80000], ["pib", 3280000000.0], ["moeda", "Euro"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:06.439064"], ["updated_at", "2017-09-13 03:27:06.439064"], ["imagem_file_name", "Andorra.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 9267], ["imagem_updated_at", "2017-09-13 03:27:06.404925"]]
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/232bf11cb81bcdb269f76a08fde8b94720170913-3681-1i63b1s.jpg'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/232bf11cb81bcdb269f76a08fde8b94720170913-3681-uq38kf.jpg'
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Angola"], ["local", "África"], ["capital", "Luanda"], ["extensao", 1246700], ["idioma", "Português"], ["populacao", 21900000], ["pib", 89630000000.0], ["moeda", "Kuanza"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:06.522003"], ["updated_at", "2017-09-13 03:27:06.522003"], ["imagem_file_name", "Angola.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 9842], ["imagem_updated_at", "2017-09-13 03:27:06.471548"]]
+  [1m[35m (18.4ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/d8fa495a094766af86028df7792cc47a20170913-3681-1fo4i7y.gif'
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/d8fa495a094766af86028df7792cc47a20170913-3681-10h46c3.gif'
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Antigua e Barbuda"], ["local", "América Central"], ["capital", "Saint Johns"], ["extensao", 440], ["idioma", "Inglês"], ["populacao", 92100], ["pib", 1450000000.0], ["moeda", "Dólar do Caribe Oriental"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:06.812686"], ["updated_at", "2017-09-13 03:27:06.812686"], ["imagem_file_name", "Antigua_e_Barbuda.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 11500], ["imagem_updated_at", "2017-09-13 03:27:06.656752"]]
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/dc62cf4a729d7963a6caea3a70ccb8f120170913-3681-1koy2x0.gif'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/dc62cf4a729d7963a6caea3a70ccb8f120170913-3681-ebqkcw.gif'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Arábia Saudita"], ["local", "Ásia"], ["capital", "Riad"], ["extensao", 2149690], ["idioma", "Árabe"], ["populacao", 30100000], ["pib", 646440000000.0], ["moeda", "Rial"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:07.106522"], ["updated_at", "2017-09-13 03:27:07.106522"], ["imagem_file_name", "Arábia_Saudita.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 9810], ["imagem_updated_at", "2017-09-13 03:27:06.943888"]]
+  [1m[35m (15.2ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/6f0b9cbccf99ed83df9eea8998878df120170913-3681-h3u52t.jpg'
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/6f0b9cbccf99ed83df9eea8998878df120170913-3681-j7begv.jpg'
+  [1m[35mSQL (8.5ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Argélia"], ["local", "África"], ["capital", "Argel"], ["extensao", 2381740], ["idioma", "Árabe"], ["populacao", 36485828], ["pib", 156080000000.0], ["moeda", "Dinar Argelino"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:07.240515"], ["updated_at", "2017-09-13 03:27:07.240515"], ["imagem_file_name", "Argélia.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 7610], ["imagem_updated_at", "2017-09-13 03:27:07.212117"]]
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/3536be57ce0713954e454ae6c53ec02320170913-3681-coshbh.jpg'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/3536be57ce0713954e454ae6c53ec02320170913-3681-13t4p98.jpg'
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Argentina"], ["local", "América do Sul"], ["capital", "Buenos Aires"], ["extensao", 2791810], ["idioma", "Espanhol"], ["populacao", 41400000], ["pib", 545900000000.0], ["moeda", "Peso Argentino"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:07.517942"], ["updated_at", "2017-09-13 03:27:07.517942"], ["imagem_file_name", "Argentina.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 5367], ["imagem_updated_at", "2017-09-13 03:27:07.352787"]]
+  [1m[35m (18.6ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/90ff12e5e8e07fc0e3a82cfa2d3c3bcf20170913-3681-1050sps.jpg'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/90ff12e5e8e07fc0e3a82cfa2d3c3bcf20170913-3681-pf5jyh.jpg'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Armênia"], ["local", "Ásia"], ["capital", "Ierevan"], ["extensao", 29740], ["idioma", "Armênio"], ["populacao", 29740], ["pib", 10550000000.0], ["moeda", "Dram"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:07.797172"], ["updated_at", "2017-09-13 03:27:07.797172"], ["imagem_file_name", "Armênia.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 3613], ["imagem_updated_at", "2017-09-13 03:27:07.665875"]]
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (21.9ms)[0m  [1m[31mDELETE FROM "countries"[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170913-3755-164nh19.gif'
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170913-3755-pctpcr.gif'
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Afeganistão"], ["local", "Ásia"], ["capital", "Kabul"], ["extensao", 652230], ["idioma", "Patcho,Dari"], ["populacao", 33397058], ["pib", 19470000000.0], ["moeda", "Afegane"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:59.251648"], ["updated_at", "2017-09-13 03:27:59.251648"], ["imagem_file_name", "Afeganistão.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7411], ["imagem_updated_at", "2017-09-13 03:27:59.124952"]]
+  [1m[35m (16.9ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/4bbec8432f7f1b19945f5cbed87d6a0020170913-3755-19g1359.jpg'
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4bbec8432f7f1b19945f5cbed87d6a0020170913-3755-1ouewcj.jpg'
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "África do Sul"], ["local", "África"], ["capital", "Pretoria"], ["extensao", 1219090], ["idioma", "Aficaner e Inglês"], ["populacao", 50738255], ["pib", 294840000000.0], ["moeda", "Rand"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:59.497279"], ["updated_at", "2017-09-13 03:27:59.497279"], ["imagem_file_name", "Africa_do_Sul.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 36453], ["imagem_updated_at", "2017-09-13 03:27:59.406650"]]
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/4a3c8515c9fd898a8183dc92753d21e720170913-3755-vd37p0.gif'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4a3c8515c9fd898a8183dc92753d21e720170913-3755-ggf2xb.gif'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Albânia"], ["local", "Europa"], ["capital", "Tirana"], ["extensao", 28750], ["idioma", "Albanês"], ["populacao", 3227373], ["pib", 13000000.0], ["moeda", "Lek"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:59.647992"], ["updated_at", "2017-09-13 03:27:59.647992"], ["imagem_file_name", "Albânia.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 14863], ["imagem_updated_at", "2017-09-13 03:27:59.539688"]]
+  [1m[35m (20.9ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/de864f78bc7bc859ab0b26086695af6920170913-3755-e4pnto.gif'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/de864f78bc7bc859ab0b26086695af6920170913-3755-vm5cut.gif'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Alemanha"], ["local", "Europa"], ["capital", "Berlim"], ["extensao", 357120], ["idioma", "Alemão"], ["populacao", 83100000], ["pib", 3466760000000.0], ["moeda", "Euro"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:27:59.941958"], ["updated_at", "2017-09-13 03:27:59.941958"], ["imagem_file_name", "Alemanha.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7610], ["imagem_updated_at", "2017-09-13 03:27:59.811524"]]
+  [1m[35m (19.5ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/68746a7280b143cfc01f967610d3e86d20170913-3755-6b7zia.jpg'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/68746a7280b143cfc01f967610d3e86d20170913-3755-1skt8bh.jpg'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Andorra"], ["local", "Europa"], ["capital", "Andorra"], ["extensao", 470], ["idioma", "Catalão"], ["populacao", 80000], ["pib", 3280000000.0], ["moeda", "Euro"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:28:00.246433"], ["updated_at", "2017-09-13 03:28:00.246433"], ["imagem_file_name", "Andorra.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 9267], ["imagem_updated_at", "2017-09-13 03:28:00.100854"]]
+  [1m[35m (24.3ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/232bf11cb81bcdb269f76a08fde8b94720170913-3755-aw3vqc.jpg'
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/232bf11cb81bcdb269f76a08fde8b94720170913-3755-3qhac5.jpg'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Angola"], ["local", "África"], ["capital", "Luanda"], ["extensao", 1246700], ["idioma", "Português"], ["populacao", 21900000], ["pib", 89630000000.0], ["moeda", "Kuanza"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:28:00.491004"], ["updated_at", "2017-09-13 03:28:00.491004"], ["imagem_file_name", "Angola.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 9842], ["imagem_updated_at", "2017-09-13 03:28:00.411422"]]
+  [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/d8fa495a094766af86028df7792cc47a20170913-3755-almidn.gif'
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/d8fa495a094766af86028df7792cc47a20170913-3755-hnsdkp.gif'
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Antigua e Barbuda"], ["local", "América Central"], ["capital", "Saint Johns"], ["extensao", 440], ["idioma", "Inglês"], ["populacao", 92100], ["pib", 1450000000.0], ["moeda", "Dólar do Caribe Oriental"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:28:00.734501"], ["updated_at", "2017-09-13 03:28:00.734501"], ["imagem_file_name", "Antigua_e_Barbuda.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 11500], ["imagem_updated_at", "2017-09-13 03:28:00.627216"]]
+  [1m[35m (23.0ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/dc62cf4a729d7963a6caea3a70ccb8f120170913-3755-4cb1u8.gif'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/dc62cf4a729d7963a6caea3a70ccb8f120170913-3755-s2wk62.gif'
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Arábia Saudita"], ["local", "Ásia"], ["capital", "Riad"], ["extensao", 2149690], ["idioma", "Árabe"], ["populacao", 30100000], ["pib", 646440000000.0], ["moeda", "Rial"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:28:01.068326"], ["updated_at", "2017-09-13 03:28:01.068326"], ["imagem_file_name", "Arábia_Saudita.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 9810], ["imagem_updated_at", "2017-09-13 03:28:00.904402"]]
+  [1m[35m (22.2ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/6f0b9cbccf99ed83df9eea8998878df120170913-3755-r4i2r3.jpg'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/6f0b9cbccf99ed83df9eea8998878df120170913-3755-1u3a6ho.jpg'
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Argélia"], ["local", "África"], ["capital", "Argel"], ["extensao", 2381740], ["idioma", "Árabe"], ["populacao", 36485828], ["pib", 156080000000.0], ["moeda", "Dinar Argelino"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:28:01.386926"], ["updated_at", "2017-09-13 03:28:01.386926"], ["imagem_file_name", "Argélia.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 7610], ["imagem_updated_at", "2017-09-13 03:28:01.234337"]]
+  [1m[35m (17.1ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/3536be57ce0713954e454ae6c53ec02320170913-3755-b7s5b7.jpg'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/3536be57ce0713954e454ae6c53ec02320170913-3755-7g4eh4.jpg'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Argentina"], ["local", "América do Sul"], ["capital", "Buenos Aires"], ["extensao", 2791810], ["idioma", "Espanhol"], ["populacao", 41400000], ["pib", 545900000000.0], ["moeda", "Peso Argentino"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:28:01.700294"], ["updated_at", "2017-09-13 03:28:01.700294"], ["imagem_file_name", "Argentina.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 5367], ["imagem_updated_at", "2017-09-13 03:28:01.547894"]]
+  [1m[35m (79.6ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/90ff12e5e8e07fc0e3a82cfa2d3c3bcf20170913-3755-1k85rzj.jpg'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/90ff12e5e8e07fc0e3a82cfa2d3c3bcf20170913-3755-vub91q.jpg'
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Armênia"], ["local", "Ásia"], ["capital", "Ierevan"], ["extensao", 29740], ["idioma", "Armênio"], ["populacao", 29740], ["pib", 10550000000.0], ["moeda", "Dram"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:28:02.067565"], ["updated_at", "2017-09-13 03:28:02.067565"], ["imagem_file_name", "Armênia.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 3613], ["imagem_updated_at", "2017-09-13 03:28:01.930329"]]
+  [1m[35m (19.5ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/3385d321b81aae7ee85c58487874ba2e20170913-3755-16us47c.gif'
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/3385d321b81aae7ee85c58487874ba2e20170913-3755-qgt31b.gif'
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Austrália"], ["local", "Oceania"], ["capital", "Camberra"], ["extensao", 7741220], ["idioma", "Inglês"], ["populacao", 24800000], ["pib", 1204620000000.0], ["moeda", "Dólar Australiano"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:28:02.262763"], ["updated_at", "2017-09-13 03:28:02.262763"], ["imagem_file_name", "Austrália.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 14651], ["imagem_updated_at", "2017-09-13 03:28:02.205236"]]
+  [1m[35m (19.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (7.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (37.5ms)[0m  [1m[31mDELETE FROM "countries"[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170913-3835-1vlqq56.gif'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4da2a9c93c42d7bdadfe8a6fe244ce3e20170913-3835-orneiy.gif'
+  [1m[35mSQL (9.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Afeganistão"], ["local", "Ásia"], ["capital", "Kabul"], ["extensao", 652230], ["idioma", "Patcho,Dari"], ["populacao", 33397058], ["pib", 19470000000.0], ["moeda", "Afegane"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:11.118905"], ["updated_at", "2017-09-13 03:29:11.118905"], ["imagem_file_name", "Afeganistão.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7411], ["imagem_updated_at", "2017-09-13 03:29:10.987978"]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/4bbec8432f7f1b19945f5cbed87d6a0020170913-3835-ql4ihd.jpg'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4bbec8432f7f1b19945f5cbed87d6a0020170913-3835-sv9zpd.jpg'
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "África do Sul"], ["local", "África"], ["capital", "Pretoria"], ["extensao", 1219090], ["idioma", "Aficaner e Inglês"], ["populacao", 50738255], ["pib", 294840000000.0], ["moeda", "Rand"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:11.320786"], ["updated_at", "2017-09-13 03:29:11.320786"], ["imagem_file_name", "Africa_do_Sul.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 36453], ["imagem_updated_at", "2017-09-13 03:29:11.208202"]]
+  [1m[35m (17.5ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/4a3c8515c9fd898a8183dc92753d21e720170913-3835-1hfttns.gif'
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/4a3c8515c9fd898a8183dc92753d21e720170913-3835-xuqxh8.gif'
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Albânia"], ["local", "Europa"], ["capital", "Tirana"], ["extensao", 28750], ["idioma", "Albanês"], ["populacao", 3227373], ["pib", 13000000.0], ["moeda", "Lek"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:11.608699"], ["updated_at", "2017-09-13 03:29:11.608699"], ["imagem_file_name", "Albânia.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 14863], ["imagem_updated_at", "2017-09-13 03:29:11.491507"]]
+  [1m[35m (25.4ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/de864f78bc7bc859ab0b26086695af6920170913-3835-1sycsrc.gif'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/de864f78bc7bc859ab0b26086695af6920170913-3835-st4yx9.gif'
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Alemanha"], ["local", "Europa"], ["capital", "Berlim"], ["extensao", 357120], ["idioma", "Alemão"], ["populacao", 83100000], ["pib", 3466760000000.0], ["moeda", "Euro"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:11.871503"], ["updated_at", "2017-09-13 03:29:11.871503"], ["imagem_file_name", "Alemanha.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7610], ["imagem_updated_at", "2017-09-13 03:29:11.780794"]]
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/68746a7280b143cfc01f967610d3e86d20170913-3835-1f8scsq.jpg'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/68746a7280b143cfc01f967610d3e86d20170913-3835-ke8fuf.jpg'
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Andorra"], ["local", "Europa"], ["capital", "Andorra"], ["extensao", 470], ["idioma", "Catalão"], ["populacao", 80000], ["pib", 3280000000.0], ["moeda", "Euro"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:12.011748"], ["updated_at", "2017-09-13 03:29:12.011748"], ["imagem_file_name", "Andorra.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 9267], ["imagem_updated_at", "2017-09-13 03:29:11.906525"]]
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/232bf11cb81bcdb269f76a08fde8b94720170913-3835-1lw4cmw.jpg'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/232bf11cb81bcdb269f76a08fde8b94720170913-3835-tr9104.jpg'
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Angola"], ["local", "África"], ["capital", "Luanda"], ["extensao", 1246700], ["idioma", "Português"], ["populacao", 21900000], ["pib", 89630000000.0], ["moeda", "Kuanza"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:12.313869"], ["updated_at", "2017-09-13 03:29:12.313869"], ["imagem_file_name", "Angola.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 9842], ["imagem_updated_at", "2017-09-13 03:29:12.167364"]]
+  [1m[35m (22.1ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/d8fa495a094766af86028df7792cc47a20170913-3835-11bxapp.gif'
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/d8fa495a094766af86028df7792cc47a20170913-3835-1afar9d.gif'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Antigua e Barbuda"], ["local", "América Central"], ["capital", "Saint Johns"], ["extensao", 440], ["idioma", "Inglês"], ["populacao", 92100], ["pib", 1450000000.0], ["moeda", "Dólar do Caribe Oriental"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:12.556335"], ["updated_at", "2017-09-13 03:29:12.556335"], ["imagem_file_name", "Antigua_e_Barbuda.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 11500], ["imagem_updated_at", "2017-09-13 03:29:12.450012"]]
+  [1m[35m (24.3ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/dc62cf4a729d7963a6caea3a70ccb8f120170913-3835-1efh0ew.gif'
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/dc62cf4a729d7963a6caea3a70ccb8f120170913-3835-139byj0.gif'
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Arábia Saudita"], ["local", "Ásia"], ["capital", "Riad"], ["extensao", 2149690], ["idioma", "Árabe"], ["populacao", 30100000], ["pib", 646440000000.0], ["moeda", "Rial"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:12.839934"], ["updated_at", "2017-09-13 03:29:12.839934"], ["imagem_file_name", "Arábia_Saudita.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 9810], ["imagem_updated_at", "2017-09-13 03:29:12.726365"]]
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/6f0b9cbccf99ed83df9eea8998878df120170913-3835-1tw8im9.jpg'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/6f0b9cbccf99ed83df9eea8998878df120170913-3835-1447eyh.jpg'
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Argélia"], ["local", "África"], ["capital", "Argel"], ["extensao", 2381740], ["idioma", "Árabe"], ["populacao", 36485828], ["pib", 156080000000.0], ["moeda", "Dinar Argelino"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:13.026583"], ["updated_at", "2017-09-13 03:29:13.026583"], ["imagem_file_name", "Argélia.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 7610], ["imagem_updated_at", "2017-09-13 03:29:12.971841"]]
+  [1m[35m (19.4ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/3536be57ce0713954e454ae6c53ec02320170913-3835-1293zqn.jpg'
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/3536be57ce0713954e454ae6c53ec02320170913-3835-omhisi.jpg'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Argentina"], ["local", "América do Sul"], ["capital", "Buenos Aires"], ["extensao", 2791810], ["idioma", "Espanhol"], ["populacao", 41400000], ["pib", 545900000000.0], ["moeda", "Peso Argentino"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:13.343233"], ["updated_at", "2017-09-13 03:29:13.343233"], ["imagem_file_name", "Argentina.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 5367], ["imagem_updated_at", "2017-09-13 03:29:13.191943"]]
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/90ff12e5e8e07fc0e3a82cfa2d3c3bcf20170913-3835-12ewhxm.jpg'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/90ff12e5e8e07fc0e3a82cfa2d3c3bcf20170913-3835-1si4mz6.jpg'
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Armênia"], ["local", "Ásia"], ["capital", "Ierevan"], ["extensao", 29740], ["idioma", "Armênio"], ["populacao", 29740], ["pib", 10550000000.0], ["moeda", "Dram"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:13.510515"], ["updated_at", "2017-09-13 03:29:13.510515"], ["imagem_file_name", "Armênia.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 3613], ["imagem_updated_at", "2017-09-13 03:29:13.482627"]]
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/3385d321b81aae7ee85c58487874ba2e20170913-3835-patay5.gif'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/3385d321b81aae7ee85c58487874ba2e20170913-3835-84xu0b.gif'
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Austrália"], ["local", "Oceania"], ["capital", "Camberra"], ["extensao", 7741220], ["idioma", "Inglês"], ["populacao", 24800000], ["pib", 1204620000000.0], ["moeda", "Dólar Australiano"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:13.751680"], ["updated_at", "2017-09-13 03:29:13.751680"], ["imagem_file_name", "Austrália.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 14651], ["imagem_updated_at", "2017-09-13 03:29:13.586718"]]
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/c84559126c5ffa125065b2dc69fde1a720170913-3835-yya5b0.gif'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/c84559126c5ffa125065b2dc69fde1a720170913-3835-1fm9th9.gif'
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Áustria"], ["local", "Europa"], ["capital", "Viena"], ["extensao", 83879], ["idioma", "Alemão"], ["populacao", 8710000], ["pib", 386430000000.0], ["moeda", "Euro"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:13.881271"], ["updated_at", "2017-09-13 03:29:13.881271"], ["imagem_file_name", "Áustria.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 1844], ["imagem_updated_at", "2017-09-13 03:29:13.783149"]]
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/9c9197adcd6acc44023ae91ed94cdf7e20170913-3835-j0no0u.jpg'
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/9c9197adcd6acc44023ae91ed94cdf7e20170913-3835-1rcvfx4.jpg'
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Azerbaijão"], ["local", "Ásia"], ["capital", "Baku"], ["extensao", 86600], ["idioma", "Azerbaijano"], ["populacao", 9680000], ["pib", 37850000000.0], ["moeda", "Manat"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:13.969601"], ["updated_at", "2017-09-13 03:29:13.969601"], ["imagem_file_name", "Azerbaijão.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 5597], ["imagem_updated_at", "2017-09-13 03:29:13.916468"]]
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/6dbefdc38954fc54ea0c697d0c6ec0a720170913-3835-rossen.gif'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/6dbefdc38954fc54ea0c697d0c6ec0a720170913-3835-1sg7rmf.gif'
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Bahamas"], ["local", "América Central"], ["capital", "Nassau"], ["extensao", 13880], ["idioma", "Inglês"], ["populacao", 353500], ["pib", 9050000000.0], ["moeda", "Dólar das Bahamas"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:14.141721"], ["updated_at", "2017-09-13 03:29:14.141721"], ["imagem_file_name", "Bahamas.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 7472], ["imagem_updated_at", "2017-09-13 03:29:14.105659"]]
+  [1m[35m (17.9ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/f78a77f631d275aac6a914a17fe1b88520170913-3835-m7lkam.gif'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/f78a77f631d275aac6a914a17fe1b88520170913-3835-1a4idm4.gif'
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Bangladesh"], ["local", "Ásia"], ["capital", "Dacca"], ["extensao", 144000], ["idioma", "Bengali"], ["populacao", 154500000], ["pib", 221420000000.0], ["moeda", "Taka"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:14.288921"], ["updated_at", "2017-09-13 03:29:14.288921"], ["imagem_file_name", "Bangladesh.gif"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 5377], ["imagem_updated_at", "2017-09-13 03:29:14.249522"]]
+  [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/3214c0f21d200a1dae4eb83a53ec273020170913-3835-c5lo4k.png'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/3214c0f21d200a1dae4eb83a53ec273020170913-3835-14yj4ax.png'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Barbados"], ["local", "América Central"], ["capital", "Bridgetown"], ["extensao", 430], ["idioma", "Inglês"], ["populacao", 275100], ["pib", 4590000000.0], ["moeda", "Dólar de Barbados"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:14.466132"], ["updated_at", "2017-09-13 03:29:14.466132"], ["imagem_file_name", "Barbados.png"], ["imagem_content_type", "image/png"], ["imagem_file_size", 3792], ["imagem_updated_at", "2017-09-13 03:29:14.427485"]]
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/c0aabe84aff003a725055e5c1516301120170913-3835-17y4p6g.gif'
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/c0aabe84aff003a725055e5c1516301120170913-3835-loy2g2.gif'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Bahrein"], ["local", "Ásia"], ["capital", "Manama"], ["extensao", 760], ["idioma", "Árabe"], ["populacao", 1608000], ["pib", 31860000000.0], ["moeda", "Dinar de Bahrein"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:14.772709"], ["updated_at", "2017-09-13 03:29:14.772709"], ["imagem_file_name", "Bahrein.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 8578], ["imagem_updated_at", "2017-09-13 03:29:14.633422"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/6542f875eaa09a5c550e5f3986400ad920170913-3835-yvgivj.gif'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/6542f875eaa09a5c550e5f3986400ad920170913-3835-1ca55sc.gif'
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Belarus"], ["local", "Europa"], ["capital", "Minsk"], ["extensao", 207600], ["idioma", "Bielo-Russo,Russo"], ["populacao", 10531000], ["pib", 47430000000.0], ["moeda", "Rubio"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:14.942628"], ["updated_at", "2017-09-13 03:29:14.942628"], ["imagem_file_name", "Belarus.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 5631], ["imagem_updated_at", "2017-09-13 03:29:14.904202"]]
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/3528793b4f15470eba0a391d584cf8cc20170913-3835-1ijq61r.gif'
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/3528793b4f15470eba0a391d584cf8cc20170913-3835-fs8qq8.gif'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Bélgica"], ["local", "Europa"], ["capital", "Bruxelas"], ["extensao", 30530], ["idioma", "Francês, Alemão, Holandês"], ["populacao", 12310000], ["pib", 466370000000.0], ["moeda", "Euro"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:15.269010"], ["updated_at", "2017-09-13 03:29:15.269010"], ["imagem_file_name", "Bélgica.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 2100], ["imagem_updated_at", "2017-09-13 03:29:15.111256"]]
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/20bca6785240fa722edb5c85d055a93d20170913-3835-1iowx1n.png'
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/20bca6785240fa722edb5c85d055a93d20170913-3835-13ufnfv.png'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Belize"], ["local", "América Central"], ["capital", "Belmopan"], ["extensao", 22970], ["idioma", "Inglês"], ["populacao", 378050], ["pib", 1770000000.0], ["moeda", "Dólar de Belize"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:15.511788"], ["updated_at", "2017-09-13 03:29:15.511788"], ["imagem_file_name", "Belize.png"], ["imagem_content_type", "image/png"], ["imagem_file_size", 29219], ["imagem_updated_at", "2017-09-13 03:29:15.404202"]]
+  [1m[35m (18.6ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/9e7002d53d4db7bfad4f5cf419b0c12620170913-3835-4b5az.gif'
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/9e7002d53d4db7bfad4f5cf419b0c12620170913-3835-7909n.gif'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Benin"], ["local", "África"], ["capital", "Porto Novo"], ["extensao", 112620], ["idioma", "Francês"], ["populacao", 9850000], ["pib", 8580000000.0], ["moeda", "Franco CFA"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:15.849827"], ["updated_at", "2017-09-13 03:29:15.849827"], ["imagem_file_name", "Benin.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 12305], ["imagem_updated_at", "2017-09-13 03:29:15.689525"]]
+  [1m[35m (17.6ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/8cafe675eb6d96658b365c057878fd3020170913-3835-1u8x3qa.png'
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/8cafe675eb6d96658b365c057878fd3020170913-3835-1b6rz16.png'
+  [1m[35mSQL (7.7ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Bolívia"], ["local", "América do Sul"], ["capital", "La Paz"], ["extensao", 1098580], ["idioma", "Espanhol"], ["populacao", 10718000], ["pib", 33810000000.0], ["moeda", "Boliviano"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:16.025248"], ["updated_at", "2017-09-13 03:29:16.025248"], ["imagem_file_name", "Bolívia.png"], ["imagem_content_type", "image/png"], ["imagem_file_size", 717], ["imagem_updated_at", "2017-09-13 03:29:15.995612"]]
+  [1m[35m (36.2ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/1fd58b5e806810f8f81fe6d2d1b7bcbf20170913-3835-a8yq85.png'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/1fd58b5e806810f8f81fe6d2d1b7bcbf20170913-3835-1oemdp7.png'
+  [1m[35mSQL (7.5ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Bósnia-Herzegóvina"], ["local", "Europa"], ["capital", "Saravejo"], ["extensao", 51210], ["idioma", "Bósnio"], ["populacao", 4063070], ["pib", 16560000000.0], ["moeda", "Marco Convertível"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:16.127554"], ["updated_at", "2017-09-13 03:29:16.127554"], ["imagem_file_name", "Bósnia-Herzegovina.png"], ["imagem_content_type", "image/png"], ["imagem_file_size", 10100], ["imagem_updated_at", "2017-09-13 03:29:16.100011"]]
+  [1m[35m (45.3ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/6cd50fb3091b0a9d3c1ac2cf5244139020170913-3835-wflq64.png'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/6cd50fb3091b0a9d3c1ac2cf5244139020170913-3835-2yxjny.png'
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Botswana"], ["local", "África"], ["capital", "Gaborone"], ["extensao", 581730], ["idioma", "Inglês"], ["populacao", 2279070], ["pib", 15270000000.0], ["moeda", "Pula"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:16.308315"], ["updated_at", "2017-09-13 03:29:16.308315"], ["imagem_file_name", "Botswana.png"], ["imagem_content_type", "image/png"], ["imagem_file_size", 733], ["imagem_updated_at", "2017-09-13 03:29:16.193944"]]
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/aa43becf0d21463be7540bf3b40bf24320170913-3835-fc64ja.png'
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/aa43becf0d21463be7540bf3b40bf24320170913-3835-1jpwk3u.png'
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Brasil"], ["local", "América do Sul"], ["capital", "Brasília"], ["extensao", 8515767], ["idioma", "Português"], ["populacao", 207009000], ["pib", 1796190000000.0], ["moeda", "Real"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:16.485246"], ["updated_at", "2017-09-13 03:29:16.485246"], ["imagem_file_name", "Brasil.png"], ["imagem_content_type", "image/png"], ["imagem_file_size", 16842], ["imagem_updated_at", "2017-09-13 03:29:16.371381"]]
+  [1m[35m (21.3ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/d3f5841f04ba23bb90e1b9f4256cea7020170913-3835-x2zea2.gif'
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/d3f5841f04ba23bb90e1b9f4256cea7020170913-3835-4ft8o5.gif'
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Brunei"], ["local", "Ásia"], ["capital", "Bandar Seri Begawan"], ["extensao", 5770], ["idioma", "Malaio"], ["populacao", 719100], ["pib", 11400000000.0], ["moeda", "Dólar do Brunei"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:16.750839"], ["updated_at", "2017-09-13 03:29:16.750839"], ["imagem_file_name", "Brunei.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 11049], ["imagem_updated_at", "2017-09-13 03:29:16.637575"]]
+  [1m[35m (20.2ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/311ff57f59492cc47f959a844136ca6220170913-3835-jpdjjs.gif'
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/311ff57f59492cc47f959a844136ca6220170913-3835-q4kws.gif'
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Bulgária"], ["local", "Europa"], ["capital", "Sófia"], ["extensao", 111000], ["idioma", "Búlgaro"], ["populacao", 9622900], ["pib", 52400000000.0], ["moeda", "Lev"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:17.095242"], ["updated_at", "2017-09-13 03:29:17.095242"], ["imagem_file_name", "Bulgária.gif"], ["imagem_content_type", "image/gif"], ["imagem_file_size", 5748], ["imagem_updated_at", "2017-09-13 03:29:16.924223"]]
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+Command :: file -b --mime '/tmp/dfc4327c51fe1e82827c1eb7b0d23a4220170913-3835-3dmyzt.jpg'
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/dfc4327c51fe1e82827c1eb7b0d23a4220170913-3835-oaaylx.jpg'
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "countries" ("nome", "local", "capital", "extensao", "idioma", "populacao", "pib", "moeda", "ano_referencia", "created_at", "updated_at", "imagem_file_name", "imagem_content_type", "imagem_file_size", "imagem_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "Burkina Faso"], ["local", "África"], ["capital", "Ouagadougou"], ["extensao", 274220], ["idioma", "Francês"], ["populacao", 20005000], ["pib", 12120000000.0], ["moeda", "Franco CFA"], ["ano_referencia", 2016], ["created_at", "2017-09-13 03:29:17.345162"], ["updated_at", "2017-09-13 03:29:17.345162"], ["imagem_file_name", "Burkina_Faso.jpg"], ["imagem_content_type", "image/jpeg"], ["imagem_file_size", 3408], ["imagem_updated_at", "2017-09-13 03:29:17.237701"]]
+  [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-09-13 00:40:01 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (114.0ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (6.9ms)
+Completed 200 OK in 10508ms (Views: 10433.6ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-13 00:41:08 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (3.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (42.3ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (7.4ms)
+Completed 200 OK in 173ms (Views: 167.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/countries/sobre" for 127.0.0.1 at 2017-09-13 00:41:12 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"sobre"}
+  [1m[36mCountry Load (6.4ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 49ms (ActiveRecord: 9.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Country with 'id'=sobre):
+  
+app/controllers/countries_controller.rb:71:in `set_country'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.3ms)
+Started GET "/" for 127.0.0.1 at 2017-09-13 00:50:44 -0300
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation_links.html.erb (329.0ms)
+  Rendered layouts/_navigation.html.erb (331.5ms)
+Completed 500 Internal Server Error in 439ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_sobre_path' for #<#<Class:0xe0c3a88>:0xe0c2fe8>
+Did you mean?  countries_path):
+     9: <%# else %>
+    10: <%# end %>
+    11: 
+    12: <li><%= link_to 'Países', countries_sobre_path() %></li>
+  
+app/views/layouts/_navigation_links.html.erb:12:in `_app_views_layouts__navigation_links_html_erb__606041534__637520758'
+app/views/layouts/_navigation.html.erb:1:in `_app_views_layouts__navigation_html_erb___614532786_117368420'
+app/views/layouts/application.html.erb:34:in `_app_views_layouts_application_html_erb___507381232__634470448'
+app/controllers/pages_controller.rb:7:in `show'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.4ms)
+Started GET "/" for 127.0.0.1 at 2017-09-13 00:53:21 -0300
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (7.0ms)
+Completed 200 OK in 120ms (Views: 118.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-13 00:53:24 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (2.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (95.7ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.5ms)
+Completed 200 OK in 251ms (Views: 213.3ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-13 00:53:26 -0300
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (12.8ms)
+Completed 200 OK in 958ms (Views: 934.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-13 00:54:27 -0300
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (4.8ms)
+  Rendered layouts/_navigation.html.erb (10.1ms)
+Completed 200 OK in 123ms (Views: 121.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-13 00:54:44 -0300
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.6ms)
+Completed 200 OK in 125ms (Views: 124.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-13 00:54:49 -0300
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (6.4ms)
+Completed 200 OK in 273ms (Views: 263.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-13 00:54:50 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (3.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (77.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (7.0ms)
+Completed 200 OK in 213ms (Views: 207.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 00:55:51 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (3.0ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navigation_links.html.erb (21.9ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (84.4ms)
+Completed 200 OK in 1137ms (Views: 1121.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 00:57:18 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (613.6ms)
+Completed 500 Internal Server Error in 627ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `nome' for #<#<Class:0xb188fbd8>:0xb4a09e84>):
+    1: <p id="notice"><%= notice %>
+    2: 
+    3: <div id="titulo" class="animated pulse">
+    4:   Dados sobre <%= @country;nome %>
+    5: </div>
+    6: 
+    7: <table class="table" border="1" align="center">
+  
+app/views/countries/show.html.erb:4:in `_app_views_countries_show_html_erb___763464515__632270348'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.7ms)
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 00:57:31 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (1.6ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.4ms)
+Completed 200 OK in 201ms (Views: 184.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 00:58:24 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (701.1ms)
+Completed 500 Internal Server Error in 730ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `country' for #<#<Class:0xb188fbd8>:0xd67ba1c>
+Did you mean?  @country):
+     5: </div>
+     6: 
+     7: <center>
+     8:   <%= image_tag country.imagem.url, size:"200" %>
+     9: </center>
+    10: 
+    11: <table class="table" border="1" align="center">
+  
+app/views/countries/show.html.erb:8:in `_app_views_countries_show_html_erb___763464515_112517490'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (257.0ms)
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 00:58:42 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (1.9ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (53.9ms)
+  Rendered layouts/_navigation_links.html.erb (14.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (13.6ms)
+  Rendered layouts/_navigation.html.erb (74.6ms)
+Completed 200 OK in 1112ms (Views: 1105.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 00:58:59 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (81.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.1ms)
+Completed 200 OK in 255ms (Views: 250.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 00:59:14 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navigation_links.html.erb (1.3ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (18.6ms)
+Completed 200 OK in 271ms (Views: 252.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 00:59:28 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (16.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.6ms)
+Completed 200 OK in 180ms (Views: 160.3ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 00:59:49 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.0ms)
+Completed 200 OK in 187ms (Views: 182.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 01:00:50 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (8.5ms)
+Completed 200 OK in 164ms (Views: 158.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 01:08:06 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (198.0ms)
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (:us is not a valid locale):
+    48: 
+    49:   <tr>
+    50:     <th>PIB:</th>
+    51:     <td><%= number_to_currency(@country.pib, precision: 3, locale: :us) %></td> <!-- number_to_currency(1234567890.506, precision: 3) -->
+    52:   </tr>
+    53: 
+    54:   <tr>
+  
+app/views/countries/show.html.erb:51:in `_app_views_countries_show_html_erb___763464515__631398368'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.0ms)
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 01:09:00 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (3.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (55.3ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.2ms)
+Completed 200 OK in 278ms (Views: 225.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/countries/29" for 127.0.0.1 at 2017-09-13 01:10:14 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.5ms)
+Completed 200 OK in 133ms (Views: 129.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-13 01:10:21 -0300
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (2.0ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.9ms)
+Completed 200 OK in 131ms (Views: 129.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-13 01:10:22 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (7.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (65.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (7.4ms)
+Completed 200 OK in 252ms (Views: 241.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/countries/28" for 127.0.0.1 at 2017-09-13 01:10:26 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (7.2ms)
+Completed 200 OK in 178ms (Views: 173.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/countries/28" for 127.0.0.1 at 2017-09-13 01:11:36 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mCountry Load (3.3ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (6.6ms)
+Completed 200 OK in 178ms (Views: 167.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/countries/28" for 127.0.0.1 at 2017-09-13 01:13:52 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (44.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (6.9ms)
+Completed 200 OK in 185ms (Views: 180.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/countries/28" for 127.0.0.1 at 2017-09-13 01:14:41 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (:br is not a valid locale):
+    43: 
+    44:   <tr>
+    45:     <th>População:</th>
+    46:     <td><%= number_to_human(@country.populacao, precision: 3, locale: :br) %></td>
+    47:   </tr>
+    48: 
+    49:   <tr>
+  
+app/views/countries/show.html.erb:46:in `_app_views_countries_show_html_erb___763464515_111236000'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.9ms)
+Started GET "/countries/28" for 127.0.0.1 at 2017-09-13 01:14:58 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (3683.8ms)
+Completed 500 Internal Server Error in 3701ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `br' for #<#<Class:0xb188fbd8>:0xd2861a0>):
+    43: 
+    44:   <tr>
+    45:     <th>População:</th>
+    46:     <td><%= number_to_human(@country.populacao, precision: 3, locale: br) %></td>
+    47:   </tr>
+    48: 
+    49:   <tr>
+  
+app/views/countries/show.html.erb:46:in `_app_views_countries_show_html_erb___763464515_110375780'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.3ms)
+Started GET "/countries/28" for 127.0.0.1 at 2017-09-13 01:17:41 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (561.5ms)
+Completed 500 Internal Server Error in 576ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `br' for #<#<Class:0xb188fbd8>:0xb163543c>):
+    43: 
+    44:   <tr>
+    45:     <th>População:</th>
+    46:     <td><%= number_to_precision(@country.populacao, precision: 3, locale: br) %></td>
+    47:   </tr>
+    48: 
+    49:   <tr>
+  
+app/views/countries/show.html.erb:46:in `_app_views_countries_show_html_erb___763464515__659444458'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.2ms)
+Started GET "/countries/28" for 127.0.0.1 at 2017-09-13 01:17:51 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (797.0ms)
+Completed 500 Internal Server Error in 820ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `number_to_precision' for #<#<Class:0xb188fbd8>:0xd3c389c>
+Did you mean?  number_to_phone
+               number_with_precision):
+    43: 
+    44:   <tr>
+    45:     <th>População:</th>
+    46:     <td><%= number_to_precision(@country.populacao, precision: 3) %></td>
+    47:   </tr>
+    48: 
+    49:   <tr>
+  
+app/views/countries/show.html.erb:46:in `_app_views_countries_show_html_erb___763464515_111025900'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.6ms)
+Started GET "/countries/28" for 127.0.0.1 at 2017-09-13 01:18:32 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (7.1ms)
+Completed 200 OK in 152ms (Views: 147.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/countries/28" for 127.0.0.1 at 2017-09-13 01:18:49 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.6ms)
+Completed 200 OK in 189ms (Views: 179.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/countries/28" for 127.0.0.1 at 2017-09-13 01:19:02 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_navigation_links.html.erb (4.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (10.3ms)
+Completed 200 OK in 214ms (Views: 209.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-13 01:19:08 -0300
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation_links.html.erb (1.3ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (6.4ms)
+Completed 200 OK in 139ms (Views: 138.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-13 01:19:12 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (1.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (46.6ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (6.3ms)
+Completed 200 OK in 335ms (Views: 331.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/countries/38" for 127.0.0.1 at 2017-09-13 01:19:17 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mCountry Load (9.7ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (5.9ms)
+Completed 200 OK in 130ms (Views: 117.2ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/countries/38" for 127.0.0.1 at 2017-09-13 01:19:32 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mCountry Load (4.9ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (5.7ms)
+Completed 200 OK in 153ms (Views: 144.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-13 01:19:55 -0300
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.9ms)
+Completed 200 OK in 122ms (Views: 120.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-13 01:19:56 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (1.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (38.0ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (6.4ms)
+Completed 200 OK in 174ms (Views: 169.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries/30" for 127.0.0.1 at 2017-09-13 01:19:59 -0300
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navigation_links.html.erb (16.8ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (16.4ms)
+  Rendered layouts/_navigation.html.erb (89.6ms)
+Completed 200 OK in 812ms (Views: 806.4ms | ActiveRecord: 0.5ms)
+
+
