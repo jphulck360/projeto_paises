@@ -2545,3 +2545,49 @@ Processing by CountriesController#show as HTML
 Completed 200 OK in 812ms (Views: 806.4ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-09-13 10:56:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (31.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (21.4ms)
+Completed 200 OK in 6051ms (Views: 6013.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-13 10:56:28 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (66.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (240.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (6.7ms)
+Completed 200 OK in 401ms (Views: 207.5ms | ActiveRecord: 158.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-19 21:56:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (30.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (21.4ms)
+Completed 200 OK in 15352ms (Views: 15315.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-09-19 21:57:05 -0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (71.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (232.6ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (7.3ms)
+Completed 200 OK in 414ms (Views: 201.5ms | ActiveRecord: 153.1ms)
+
+
