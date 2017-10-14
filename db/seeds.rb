@@ -60,6 +60,7 @@ Country.create!(nome: 'Djibuti', local: 'África', capital: 'Djibouti', extensao
 Country.create!(nome: 'Dominica', local: 'América Central', capital: 'Roseau', extensao: 750, idioma: 'Inglês', populacao: 76400, pib: 530000000, moeda: 'Dólar do Caribe Oriental', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Dominica.gif"))
 Country.create!(nome: 'Egito', local: 'África', capital: 'Cairo', extensao: 1001450, idioma: 'Árabe', populacao: 88076000, pib: 26800000000, moeda: 'Libra Egípcia', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Egito.gif"))
 
+# Em análise - Verificar extensão das bandeiras.
 Country.create!(nome: 'El Salvador', local: 'América Central', capital: 'São Salvador', extensao: 21040, idioma: 'Espanhol', populacao: 9221000, pib: 26800000000, moeda: 'Colon', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/El Salvador.gif"))
 Country.create!(nome: 'Emirados Árabes', local: 'Ásia', capital: 'Abu Dhabi', extensao: 83600, idioma: 'Árabe', populacao: 12400000, pib: 348740000000, moeda: 'Dirham', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Emirados Árabes Unidos.gif"))
 Country.create!(nome: 'Equador', local: 'América do Sul', capital: 'Quito', extensao: 256370, idioma: 'Espanhol', populacao: 18000000, pib: 97800000000, moeda: 'Dólar Americano', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Equador.gif"))
@@ -69,18 +70,12 @@ Country.create!(nome: 'Eslovênia', local: 'Europa', capital: 'Liubliana', exten
 Country.create!(nome: 'Espanha', local: 'Europa', capital: 'Madrid', extensao: 505370, idioma: 'Espanhol', populacao: 51318000, pib: 1232090000000, moeda: 'Euro', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Espanha.gif"))
 Country.create!(nome: 'Estados Unidos', local: 'América do Norte', capital: 'Washington D.C.', extensao: 9831510, idioma: 'Inglês', populacao: 324500000, pib: 18569100000000, moeda: 'Dólar americano', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Estados Unidos.gif"))
 Country.create!(nome: 'Estônia', local: 'Europa', capital: 'Tallinn', extensao: 45230, idioma: 'Estoniano', populacao: 3135000, pib: 23140000000, moeda: 'Coroa estoniana', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Estônia.gif"))
-
-# Country.create!(nome: 'Etiópia', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 72370000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
-
-# Country.create!(nome: 'Fiji', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 4630000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
-
-# Country.create!(nome: 'Filipinas', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 304900000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
-
-# Country.create!(nome: 'Finlândia', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 236790000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
-
-# Country.create!(nome: 'França', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 2465450000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
-
-# Country.create!(nome: 'Gabão', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 14210000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+Country.create!(nome: 'Etiópia', local: 'África', capital: 'Adis-Abeba', extensao: 1104300, idioma: 'Amárico', populacao: 88539134, pib: 72370000000, moeda: 'Birr', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Etiópia.gif"))
+Country.create!(nome: 'Fiji', local: 'Oceania', capital: 'Suva', extensao: 18270, idioma: 'Fijiano, Inglês', populacao: 1065000, pib: 4630000000, moeda: 'Dólar Fijiano', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Fiji.gif"))
+Country.create!(nome: 'Filipinas', local: 'Ásia', capital: 'Manila', extensao: 300000, idioma: 'Filipino, Inglês', populacao: 103995000, pib: 304900000000, moeda: 'Peso Filipino', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Filipinas.gif"))
+Country.create!(nome: 'Finlândia', local: 'Europa', capital: 'Helsinque', extensao: 338420, idioma: 'Dólar Fijiano', populacao: 1052100, pib: 236790000000, moeda: 'Euro', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Finlândia.gif"))
+Country.create!(nome: 'França', local: 'Europa', capital: 'Paris', extensao: 549190, idioma: 'Francês', populacao: 69923000, pib: 2465450000000, moeda: 'Euro', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/França.gif"))
+Country.create!(nome: 'Gabão', local: 'África', capital: 'Libreville', extensao: 267670, idioma: 'Francês', populacao: 1919000, pib: 14210000000, moeda: 'Franco CFA', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/Gabão.gif"))
 
 # Country.create!(nome: 'Gâmbia', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 960000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
@@ -172,7 +167,7 @@ Country.create!(nome: 'Estônia', local: 'Europa', capital: 'Tallinn', extensao:
 
 # Country.create!(nome: 'Madasgáscar', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 9990000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Malásia', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 296360000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Malásia', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 296360000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Malauí', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 5440000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
@@ -180,7 +175,7 @@ Country.create!(nome: 'Estônia', local: 'Europa', capital: 'Tallinn', extensao:
 
 # Country.create!(nome: 'Mali', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 14050000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Malta', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 10950000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Malta', local: 'Europa', capital: '', extensao: , idioma: '', populacao: , pib: 10950000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Marrocos', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 101450000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
@@ -188,7 +183,7 @@ Country.create!(nome: 'Estônia', local: 'Europa', capital: 'Tallinn', extensao:
 
 # Country.create!(nome: 'Mauritânia', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 4630000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'México', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 1046000000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'México', local: 'América Central', capital: '', extensao: , idioma: '', populacao: , pib: 1046000000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Mianmar', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 67400000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
@@ -200,15 +195,15 @@ Country.create!(nome: 'Estônia', local: 'Europa', capital: 'Tallinn', extensao:
 
 # Country.create!(nome: 'Mônaco', local: 'Europa', capital: '', extensao: , idioma: '', populacao: , pib: 6070000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Mongólia', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 11160000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Mongólia', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 11160000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Montenegro', local: 'Europa', capital: '', extensao: , idioma: '', populacao: , pib: 4170000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Namíbia', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 10270000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Namíbia', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 10270000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Nepal', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 21140000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Nepal', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 21140000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Nicarágua', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 13230000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Nicarágua', local: 'América Central', capital: '', extensao: , idioma: '', populacao: , pib: 13230000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Níger', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 7510000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
@@ -216,39 +211,39 @@ Country.create!(nome: 'Estônia', local: 'Europa', capital: 'Tallinn', extensao:
 
 # Country.create!(nome: 'Noruega', local: 'Europa', capital: '', extensao: , idioma: '', populacao: , pib: 370560000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Nova Zelândia', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 185020000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Nova Zelândia', local: 'Oceania', capital: '', extensao: , idioma: '', populacao: , pib: 185020000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Omã', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 66290000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Omã', local: '', capital: 'Ásia', extensao: , idioma: '', populacao: , pib: 66290000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Palau', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 290000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Palestina', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 8000000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Palestina', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 8000000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Panamá', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 55190000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Panamá', local: 'América Central', capital: '', extensao: , idioma: '', populacao: , pib: 55190000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Papua Nova Guiné', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 16930000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Papua Nova Guiné', local: 'Oceania', capital: '', extensao: , idioma: '', populacao: , pib: 16930000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Paquistão', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 283660000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Paraguai', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 27440000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Paraguai', local: 'América do Sul', capital: '', extensao: , idioma: '', populacao: , pib: 27440000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Peru', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 192090000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Peru', local: 'América do Sul', capital: '', extensao: , idioma: '', populacao: , pib: 192090000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Polônia', local: 'Europa', capital: '', extensao: , idioma: '', populacao: , pib: 469510000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Porto Rico', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 103100000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Porto Rico', local: 'América do Sul', capital: '', extensao: , idioma: '', populacao: , pib: 103100000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Portugal', local: 'Europa', capital: '', extensao: , idioma: '', populacao: , pib: 204560000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Quênia', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 70530000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Quirguistão', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 6550000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Quirguistão', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 6550000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Reino Unido', local: 'Europa', capital: '', extensao: , idioma: '', populacao: , pib: 2618890000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'República Centro-Africana', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 1760000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'República Democrática do Congo', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 7830000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'República Democrática do Congo', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 7830000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'República Dominicana', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 71580000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
@@ -294,13 +289,13 @@ Country.create!(nome: 'Estônia', local: 'Europa', capital: 'Tallinn', extensao:
 
 # Country.create!(nome: 'Suíça', local: 'Europa', capital: '', extensao: , idioma: '', populacao: , pib: 659830000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Suriname', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 3620000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Suriname', local: 'América do Sul', capital: '', extensao: , idioma: '', populacao: , pib: 3620000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Tadjiquistão', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 6950000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Tadjiquistão', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 6950000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Tailândia', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 406840000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Tailândia', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 406840000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Taiwan', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 523010000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Taiwan', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 523010000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Tanzânia', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 47430000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
@@ -310,11 +305,11 @@ Country.create!(nome: 'Estônia', local: 'Europa', capital: 'Tallinn', extensao:
 
 # Country.create!(nome: 'Tonga', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 400000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Trinidad e Tobago', local: '', capital: '', extensao: , idioma: '', populacao: 20990000000, pib: , moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Trinidad e Tobago', local: 'América Central', capital: '', extensao: , idioma: '', populacao: 20990000000, pib: , moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Tunísia', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 42100000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Turcomenistão', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 36180000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Turcomenistão', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 36180000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Turquia', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 857750000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
@@ -322,15 +317,15 @@ Country.create!(nome: 'Estônia', local: 'Europa', capital: 'Tallinn', extensao:
 
 # Country.create!(nome: 'Uganda', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 25530000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Uruguai', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 52420000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Uruguai', local: 'América do Sul', capital: '', extensao: , idioma: '', populacao: , pib: 52420000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Uzbequistão', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 67220000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Uzbequistão', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 67220000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Vanuatu', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 770000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Venezuela', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 509970000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Venezuela', local: 'América do Sul', capital: '', extensao: , idioma: '', populacao: , pib: 509970000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
-# Country.create!(nome: 'Vietnã', local: '', capital: '', extensao: , idioma: '', populacao: , pib: 202620000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
+# Country.create!(nome: 'Vietnã', local: 'Ásia', capital: '', extensao: , idioma: '', populacao: , pib: 202620000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
 # Country.create!(nome: 'Zâmbia', local: 'África', capital: '', extensao: , idioma: '', populacao: , pib: 19550000000, moeda: '', ano_referencia: 2016, :imagem => File.new("#{Rails.root}/app/assets/images/Bandeiras/.gif"))
 
