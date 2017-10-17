@@ -2591,3 +2591,37 @@ Processing by CountriesController#index as HTML
 Completed 200 OK in 414ms (Views: 201.5ms | ActiveRecord: 153.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-10-17 12:40:39 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (18.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (24.9ms)
+Completed 200 OK in 4744ms (Views: 4695.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-10-17 12:40:50 -0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (17.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (91.3ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (5.4ms)
+Completed 200 OK in 227ms (Views: 128.6ms | ActiveRecord: 53.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-17 12:41:06 -0200
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sobre"}
+  Rendering pages/sobre.html.erb within layouts/application
+  Rendered pages/sobre.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (9.5ms)
+Completed 200 OK in 165ms (Views: 164.2ms | ActiveRecord: 0.0ms)
+
+
