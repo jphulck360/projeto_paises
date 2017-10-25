@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906165556) do
+ActiveRecord::Schema.define(version: 20171025163120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "continents", force: :cascade do |t|
+    t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "countries", force: :cascade do |t|
     t.string   "nome"
@@ -31,6 +37,12 @@ ActiveRecord::Schema.define(version: 20170906165556) do
     t.string   "imagem_content_type"
     t.integer  "imagem_file_size"
     t.datetime "imagem_updated_at"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

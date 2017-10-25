@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to new_continent_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Continent
+  <% end %>
+  <h1>Listing continents</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Nome</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @continents) do |continent| %>
+            <td><%= continent.nome %></td>
+            <td><%= link_to 'Show', continent %></td>
+        <td><%= link_to 'Edit', edit_continent_path(continent) %></td>
+        <td><%= link_to 'Destroy', continent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
