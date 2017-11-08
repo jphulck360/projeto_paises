@@ -33,7 +33,9 @@
 
   <tr>
     <th>Extensao:</th>
-    <td><%= @country.extensao %> km²</td>
+    <td>
+      <%= number_with_delimiter(@country.extensao, precision: 3, delimiter: ".") %> km²
+    </td>
   </tr>
 
   <tr>

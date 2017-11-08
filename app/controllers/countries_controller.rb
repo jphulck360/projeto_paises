@@ -65,6 +65,40 @@ class CountriesController < ApplicationController
   def sobre
   end
 
+  def listaContinentes
+    @countries = Country.all
+
+    @valor = params[:escolha]
+    if @valor.nil?
+      @paises = Country.all
+      #flash[:warning] = "SEM EXCEÇÃO!"
+    elsif @valor == 'america_do_sul'
+      @paises = @countries.where("local = 'América do Sul'")
+      flash[:warning] = "América do Sul!"
+    elsif @valor == 'america_central'
+      @paises = @countries.where("local = 'América Central'")
+      flash[:warning] = "América Central!"
+    elsif @valor == 'america_do_norte'
+      @paises = @countries.where("local = 'América do Norte'")
+      flash[:warning] = "América do Norte!"
+    elsif @valor == 'europa'
+      @paises = @countries.where("local = 'Europa'")
+      flash[:warning] = "Europa!"
+    elsif @valor == 'africa'
+      @paises = @countries.where("local = 'África'")
+      flash[:warning] = "África!"
+    elsif @valor == 'asia'
+      @paises = @countries.where("local = 'Ásia'")
+      flash[:warning] = "Ásia!"
+    elsif @valor == 'oceania'
+      @paises = @countries.where("local = 'Oceania'")
+      flash[:warning] = "Oceania!"
+    else
+      @paises = Country.all
+      #flash[:warning] = "FAIL!"
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_country
@@ -73,6 +107,18 @@ class CountriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def country_params
-      params.require(:country).permit(:nome, :local, :capital, :extensao, :idioma, :populacao, :pib, :moeda, :ano_referencia, :imagem)
+      params.require(:country).permit(
+        :nome, 
+        :local, 
+        :capital, 
+        :extensao, 
+        :idioma, 
+        :populacao, 
+        :pib, 
+        :moeda, 
+        :ano_referencia, 
+        :imagem,
+        :escolha
+      )
     end
 end
