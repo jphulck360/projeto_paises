@@ -48,7 +48,7 @@
 
   <tr>
     <th>PIB:</th>
-    <td><%= number_to_currency(@country.pib, precision: 3, unit: "US$ ") %></td> <!-- number_to_currency(1234567890.506, precision: 3) -->
+    <td><%= number_to_currency(@country.pib, precision: 2, unit: "US$ ", separator: ",", delimiter: ".") %></td> <!-- number_to_currency(1234567890.506, precision: 3) -->
   </tr>
 
   <tr>
