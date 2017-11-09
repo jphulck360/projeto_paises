@@ -23,6 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem "paperclip" # utilizado para enviar arquivos
 gem 'bootstrap-generators', '~> 3.3.1'
+gem 'bootstrap_jt'
 gem 'will_paginate' # cria paginação
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 # Use CoffeeScript for .coffee assets and views

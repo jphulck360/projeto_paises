@@ -45,6 +45,7 @@ GEM
     bindex (0.5.0)
     bootstrap-generators (3.3.4)
       railties (>= 3.1.0)
+    bootstrap_jt (0.1.0)
     builder (3.2.3)
     byebug (9.1.0)
     capybara (2.15.1)
@@ -204,6 +205,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-generators (~> 3.3.1)
+  bootstrap_jt
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
@@ -226,4 +228,4 @@ DEPENDENCIES
   will_paginate-bootstrap (~> 1.0.1)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.2
