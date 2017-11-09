@@ -70,7 +70,15 @@ body{
 }
 /****************************************************************************************************/
 
-@viewport {
+@viewport{
   width: device-width;
   zoom: 1;
+}
+
+@media screen and (min-width: 400px) {
+  div { color: red; }
+}
+
+@media screen and (max-width: 400px) {
+  div { color: green; }
 }
