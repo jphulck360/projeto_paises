@@ -4,7 +4,7 @@ class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.json
   def index
-    @countries = Country.all
+    @countries = Country.all.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /countries/1
@@ -70,31 +70,31 @@ class CountriesController < ApplicationController
 
     @valor = params[:escolha]
     if @valor.nil?
-      @paises = Country.all
+      @paises = Country.all.paginate(:page => params[:page], :per_page => 20)
       #flash[:warning] = "SEM EXCEÇÃO!"
     elsif @valor == 'america_do_sul'
-      @paises = @countries.where("local = 'América do Sul'")
+      @paises = @countries.paginate(:page => params[:page], :per_page => 10).where("local = 'América do Sul'")
       flash[:warning] = "América do Sul!"
     elsif @valor == 'america_central'
-      @paises = @countries.where("local = 'América Central'")
+      @paises = @countries.paginate(:page => params[:page], :per_page => 10).where("local = 'América Central'")
       flash[:warning] = "América Central!"
     elsif @valor == 'america_do_norte'
-      @paises = @countries.where("local = 'América do Norte'")
+      @paises = @countries.paginate(:page => params[:page], :per_page => 10).where("local = 'América do Norte'")
       flash[:warning] = "América do Norte!"
     elsif @valor == 'europa'
-      @paises = @countries.where("local = 'Europa'")
+      @paises = @countries.paginate(:page => params[:page], :per_page => 10).where("local = 'Europa'")
       flash[:warning] = "Europa!"
     elsif @valor == 'africa'
-      @paises = @countries.where("local = 'África'")
+      @paises = @countries.paginate(:page => params[:page], :per_page => 10).where("local = 'África'")
       flash[:warning] = "África!"
     elsif @valor == 'asia'
-      @paises = @countries.where("local = 'Ásia'")
+      @paises = @countries.paginate(:page => params[:page], :per_page => 10).where("local = 'Ásia'")
       flash[:warning] = "Ásia!"
     elsif @valor == 'oceania'
-      @paises = @countries.where("local = 'Oceania'")
+      @paises = @countries.paginate(:page => params[:page], :per_page => 10).where("local = 'Oceania'")
       flash[:warning] = "Oceania!"
     else
-      @paises = Country.all
+      @paises = Country.all.paginate(:page => params[:page], :per_page => 20)
       #flash[:warning] = "FAIL!"
     end
   end
