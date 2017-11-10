@@ -4,21 +4,29 @@ class ContinentsController < ApplicationController
   # GET /continents
   # GET /continents.json
   def index
+    # Foi adicionado
+    redirect_to root_path
     @continents = Continent.all
   end
 
   # GET /continents/1
   # GET /continents/1.json
   def show
+    # Foi adicionado
+    redirect_to root_path
   end
 
   # GET /continents/new
   def new
+    # Foi adicionado
+    redirect_to root_path
     @continent = Continent.new
   end
 
   # GET /continents/1/edit
   def edit
+    # Foi adicionado
+    redirect_to root_path
   end
 
   # POST /continents

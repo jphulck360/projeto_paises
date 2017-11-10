@@ -4,21 +4,25 @@ class LanguagesController < ApplicationController
   # GET /languages
   # GET /languages.json
   def index
+    redirect_to root_path
     @languages = Language.all
   end
 
   # GET /languages/1
   # GET /languages/1.json
   def show
+    redirect_to root_path
   end
 
   # GET /languages/new
   def new
+    redirect_to root_path
     @language = Language.new
   end
 
   # GET /languages/1/edit
   def edit
+    redirect_to root_path
   end
 
   # POST /languages

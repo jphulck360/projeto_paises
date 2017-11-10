@@ -10,15 +10,19 @@ class CountriesController < ApplicationController
   # GET /countries/1
   # GET /countries/1.json
   def show
+    # Foi adicionado
+    redirect_to root_path
   end
 
   # GET /countries/new
   def new
+    redirect_to root_path
     @country = Country.new
   end
 
   # GET /countries/1/edit
   def edit
+    # Foi adicionado
     redirect_to root_path
   end
 
