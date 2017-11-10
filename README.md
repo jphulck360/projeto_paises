@@ -29,3 +29,5 @@ Things you may want to cover:
 Aplicação baseada no app => 'JP Geo'
 
 link -> http://galeria.fabricadeaplicativos.com.br/jpgeo
+
+# Usando => https://responsivevoice.org/api/
