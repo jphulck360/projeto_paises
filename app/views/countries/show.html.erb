@@ -64,5 +64,25 @@
   </tr>
 </table>
 
+<% descricao = @country.nome + ' é um país localizado na ' + @country.local + '. Sua capital é ' + @country.capital + '. Possui uma extensão de ' + @country.extensao.to_s + ' quilômetros quadrados. Sua população é estimada em ' + @country.populacao.to_s + ' de habitantes. ' + ' No país se fala o idioma ' + @country.idioma + '. A moeda utilizada é ' + @country.moeda
+%>
+
+<%# descricao = @country.nome + ' é um país localizado na ' + @country.local + '. Sua capital é ' + @country.capital + '. Possui uma extensão de ' %>
+
+
 <%# link_to 'Edit', edit_country_path(@country) %>
 <%# link_to 'Back', countries_path %>
+
+<script type="text/javascript" src="responsivevoice.js"></script>
+
+<button class="butt js--triggerAnimation" onclick="responsiveVoice.speak('<%= descricao %>','Brazilian Portuguese Female', {pitch:2}, {rate: 2});" 
+type="button" value="Play">Play</button>
+
+<button class="butt js--triggerAnimation" onclick="responsiveVoice.pause();" 
+type="button" value="Pause">Pause</button>
+
+<button class="butt js--triggerAnimation" onclick="responsiveVoice.resume();" 
+type="button" value="Continue">Continue</button>
+
+<button class="butt js--triggerAnimation" onclick="responsiveVoice.cancel();" 
+type="button" value="Stop">Stop</button>
