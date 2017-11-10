@@ -75,14 +75,13 @@
 
 <script type="text/javascript" src="responsivevoice.js"></script>
 
+<div align="center">
 <button class="butt js--triggerAnimation" onclick="responsiveVoice.speak('<%= descricao %>','Brazilian Portuguese Female', {rate: 0.9});" 
-type="button" value="Play">Play</button>
+  type="image" value=""><%= image_tag ('IMGS/play.jpg') %></button>
 
-<button class="butt js--triggerAnimation" onclick="responsiveVoice.pause();" 
-type="button" value="Pause">Pause</button>
+<button class="butt js--triggerAnimation" onclick="responsiveVoice.pause();" type="button" value=""><%= image_tag ('IMGS/pause.jpg') %></button>
 
-<button class="butt js--triggerAnimation" onclick="responsiveVoice.resume();" 
-type="button" value="Continue">Continue</button>
+<button class="butt js--triggerAnimation" onclick="responsiveVoice.resume();" type="button" value=""><%= image_tag ('IMGS/continue.jpg')%></button>
 
-<button class="butt js--triggerAnimation" onclick="responsiveVoice.cancel();" 
-type="button" value="Stop">Stop</button>
+<button class="butt js--triggerAnimation" onclick="responsiveVoice.cancel();" type="button" value=""><%= image_tag ('IMGS/stop.jpg') %></button>
+</div>
