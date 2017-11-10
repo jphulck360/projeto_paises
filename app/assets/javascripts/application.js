@@ -12,4 +12,5 @@
 //
 //= require turbolinks
 //= require bootstrap
+//= require responsivevoice
 //= require_tree .
